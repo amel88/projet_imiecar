@@ -1,3 +1,8 @@
+oc_user:
+    resource: "@OCUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 imiecar:
     resource: "@ImiecarBundle/Controller/"
     type:     annotation
