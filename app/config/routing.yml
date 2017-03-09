@@ -1,0 +1,5 @@
+imiecar:
+    resource: "@ImiecarBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
