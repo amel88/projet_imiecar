@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Trajets list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Villedepart</th>
+                <th>Heuredepart</th>
+                <th>Villeintermediaire</th>
+                <th>Heureintermediaire</th>
+                <th>Villearrivee</th>
+                <th>Heurearrivee</th>
+                <th>Nbplaces</th>
+                <th>Idutilisateur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trajet in trajets %}
+            <tr>
+                <td><a href="{{ path('trajet_show', { 'id': trajet.id }) }}">{{ trajet.id }}</a></td>
+                <td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ trajet.villeDepart }}</td>
+                <td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.villeIntermediaire }}</td>
+                <td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.villeArrivee }}</td>
+                <td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.nbPlaces }}</td>
+                <td>{{ trajet.idUtilisateur }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('trajet_show', { 'id': trajet.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('trajet_edit', { 'id': trajet.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('trajet_new') }}">Create a new trajet</a>
+        </li>
+    </ul>
+{% endblock %}

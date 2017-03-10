@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Trajet</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ trajet.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Villedepart</th>
+                <td>{{ trajet.villeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Heuredepart</th>
+                <td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Villeintermediaire</th>
+                <td>{{ trajet.villeIntermediaire }}</td>
+            </tr>
+            <tr>
+                <th>Heureintermediaire</th>
+                <td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Villearrivee</th>
+                <td>{{ trajet.villeArrivee }}</td>
+            </tr>
+            <tr>
+                <th>Heurearrivee</th>
+                <td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nbplaces</th>
+                <td>{{ trajet.nbPlaces }}</td>
+            </tr>
+            <tr>
+                <th>Idutilisateur</th>
+                <td>{{ trajet.idUtilisateur }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('trajet_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('trajet_edit', { 'id': trajet.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
