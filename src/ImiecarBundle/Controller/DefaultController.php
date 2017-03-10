@@ -14,4 +14,5 @@ class DefaultController extends Controller
     {
         return $this->render('ImiecarBundle:Default:index.html.twig');
     }
+
 }
