@@ -14,35 +14,35 @@
                 <td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Villedepart</th>
+                <th>Ville de depart</th>
                 <td>{{ trajet.villeDepart }}</td>
             </tr>
             <tr>
-                <th>Heuredepart</th>
+                <th>Heure de depart</th>
                 <td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Villeintermediaire</th>
+                <th>Ville intermediaire</th>
                 <td>{{ trajet.villeIntermediaire }}</td>
             </tr>
             <tr>
-                <th>Heureintermediaire</th>
+                <th>Heure intermediaire</th>
                 <td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Villearrivee</th>
+                <th>Ville d'arrivée</th>
                 <td>{{ trajet.villeArrivee }}</td>
             </tr>
             <tr>
-                <th>Heurearrivee</th>
+                <th>Heure d'arrivée</th>
                 <td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Nbplaces</th>
+                <th>Nombre de places</th>
                 <td>{{ trajet.nbPlaces }}</td>
             </tr>
             <tr>
-                <th>Idutilisateur</th>
+                <th>Id de l'utilisateur</th>
                 <td>{{ trajet.idUtilisateur }}</td>
             </tr>
         </tbody>
