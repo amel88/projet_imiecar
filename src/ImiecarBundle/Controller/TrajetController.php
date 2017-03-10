@@ -24,7 +24,7 @@ class TrajetController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $trajets = $em->getRepository('ImiecarBundle:Trajet')->findAll();
+        $trajets = $em->getRepository('ImiecarBundle:Trajet')->findSearch();
 
         return $this->render('trajet/index.html.twig', array(
             'trajets' => $trajets,

@@ -10,4 +10,13 @@ namespace ImiecarBundle\Repository;
  */
 class TrajetRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function findSearch() {
+        return $this->createQueryBuilder('t')
+            ->where('t.date = :dateA')
+            ->setParameter('dateA', '2017-03-11')
+            //->orderBy('p.price', 'ASC')
+            ->getQuery()
+            ->execute();
+    }
 }
