@@ -4,6 +4,7 @@ namespace ImiecarBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -22,7 +23,8 @@ class TrajetType extends AbstractType
             ->add('heureIntermediaire')
             ->add('villeArrivee')
             ->add('heureArrivee')
-            ->add('nbPlaces')
+            ->add('nbPlaces', IntegerType::class, array(
+                'attr' => array('min' => 1, 'max' => 8)))
             ->add('idUtilisateur');
     }
     
