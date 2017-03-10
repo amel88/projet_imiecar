@@ -59,7 +59,7 @@ class Trajet
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="heure_intermediaire", type="string", length=255)
+     * @ORM\Column(name="heure_intermediaire", type="time")
      */
     private $heureIntermediaire;
 
