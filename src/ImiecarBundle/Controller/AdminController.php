@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function arcana()
     {
         return $this->render('@Imiecar/Default/arcana.html.twig');
+
     }
-
-
+    
 }
