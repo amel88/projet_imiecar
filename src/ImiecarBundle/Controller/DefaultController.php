@@ -14,4 +14,14 @@ class DefaultController extends Controller
     {
         return $this->render('ImiecarBundle:Default:index.html.twig');
     }
+    /**
+     * @Route("/arcana")
+     */
+    public function arcana()
+    {
+        return $this->render('@Imiecar/Default/arcana.html.twig');
+
+    }
+
+
 }
