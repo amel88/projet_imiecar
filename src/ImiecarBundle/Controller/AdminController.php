@@ -24,5 +24,5 @@ class AdminController extends Controller
         return $this->render('@Imiecar/Default/arcana.html.twig');
 
     }
-    
+
 }
