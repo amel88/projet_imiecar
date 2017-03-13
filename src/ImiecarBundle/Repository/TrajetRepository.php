@@ -1,6 +1,7 @@
 <?php
 
 namespace ImiecarBundle\Repository;
+use ImiecarBundle\Entity\Trajet;
 
 /**
  * TrajetRepository
@@ -11,10 +12,18 @@ namespace ImiecarBundle\Repository;
 class TrajetRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function findSearch() {
+    public function findSearch(Trajet $trajet) {
         return $this->createQueryBuilder('t')
             ->where('t.date = :dateA')
-            ->setParameter('dateA', '2017-03-11')
+            ->setParameter('dateA', $trajet->getDate())
+            ->andWhere('t.villeDepart = :ville1')
+            ->setParameter('ville1', $trajet->getVilleDepart())
+            ->andWhere('t.villeArrivee = :ville2')
+            ->setParameter('ville2', $trajet->getVilleArrivee())
+            ->andWhere('t.heureDepart = :heure1')
+            ->setParameter('heure1',$trajet->getHeureDepart())
+            ->andWhere('t.heureArrivee = :heure2')
+            ->setParameter('heure2', $trajet->getHeureArrivee())
             //->orderBy('p.price', 'ASC')
             ->getQuery()
             ->execute();
