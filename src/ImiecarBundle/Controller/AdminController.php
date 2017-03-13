@@ -16,13 +16,6 @@ class AdminController extends Controller
     }
 
 
-    /**
-     * @Route("/arcana")
-     */
-    public function arcana()
-    {
-        return $this->render('@Imiecar/Default/arcana.html.twig');
 
-    }
 
 }
