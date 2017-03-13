@@ -15,5 +15,30 @@ class ImiecarController extends Controller
         return $this->render('ImiecarBundle::index.html.twig');
     }
 
+    /**
+    * @Route("/welcome", name="welcome")
+    */
+    public function welcomeAction()
+    {
+        return $this->render('@Imiecar/welcome.html.twig');
+    }
+
+    /**
+     * @Route("/arcana")
+     */
+    public function arcana()
+    {
+        return $this->render('@Imiecar/Default/arcana.html.twig');
+
+    }
+
+    /**
+     * @Route("/arcana/list")
+     */
+    public function listeTrajet()
+    {
+        return $this->render(':trajet:index.html.twig');
+
+    }
 
 }
