@@ -32,8 +32,18 @@ class SecurityController extends Controller
     /**
      * @Route("/logout", name="logout")
      */
-    public function logout()
+    public function logoutAction()
     {
         return $this->render('ImiecarBundle::index.html.twig');
     }
+
+    /**
+    * @Route("/inscription", name="new")
+    */
+    public function regiterAction()
+    {
+        return $this->render('@User/Security/newcompte.html.twig');
+    }
+
+
 }
