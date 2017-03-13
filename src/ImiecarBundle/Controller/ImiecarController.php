@@ -15,11 +15,5 @@ class ImiecarController extends Controller
         return $this->render('ImiecarBundle::index.html.twig');
     }
 
-    /**
-    * @Route("/welcome", name="welcome")
-    */
-    public function welcomeAction()
-    {
-        return $this->render('@Imiecar/welcome.html.twig');
-    }
+
 }
