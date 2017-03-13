@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Choisir un trajet</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.date) }}<br>
+    {{ form_row(form.villeDepart) }}<br>
+    {{ form_row(form.heureDepart) }}<br>
+    {{ form_row(form.villeArrivee) }}<br>
+    {{ form_row(form.heureArrivee) }}<br>
+    <input type="submit" value="Select" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('trajet_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

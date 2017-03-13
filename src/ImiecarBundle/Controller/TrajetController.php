@@ -24,12 +24,37 @@ class TrajetController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $trajets = $em->getRepository('ImiecarBundle:Trajet')->findSearch();
+        $trajets = $em->getRepository('ImiecarBundle:Trajet')->findall();
 
         return $this->render('trajet/index.html.twig', array(
             'trajets' => $trajets,
         ));
     }
+
+    /**
+     * Choisir un trajet.
+     *
+     * @Route("/choisir", name="choix_trajet")
+     * @Method({"GET", "POST"})
+     */
+    public function listeTrajetsChoisis(Request $request)
+    {
+
+        $trajet = new Trajet();
+        $form = $this->createForm('ImiecarBundle\Form\ChoixTrajetType', $trajet);
+        $form->handleRequest($request);
+
+            $em = $this->getDoctrine()->getManager();
+
+            $trajets = $em->getRepository('ImiecarBundle:Trajet')->findSearch($trajet);
+
+            return $this->render('choix/index.html.twig', array(
+                'trajets' => $trajets,
+                'form' => $form->createView(),
+            ));
+
+    }
+
 
     /**
      * Creates a new trajet entity.

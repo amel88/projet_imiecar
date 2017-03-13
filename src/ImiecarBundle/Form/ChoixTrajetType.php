@@ -13,7 +13,7 @@ class ChoixTrajetType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm1(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date',  DateType::class, array(
             'format' => 'dd-MM-yyyy',))
@@ -26,7 +26,7 @@ class ChoixTrajetType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions1(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'ImiecarBundle\Entity\Trajet'
@@ -36,7 +36,7 @@ class ChoixTrajetType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix1()
+    public function getBlockPrefix()
     {
         return 'imiecarbundle_trajet';
     }
