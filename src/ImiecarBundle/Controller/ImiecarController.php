@@ -24,7 +24,7 @@ class ImiecarController extends Controller
     }
 
     /**
-     * @Route("/arcana")
+     * @Route("/arcana",name="arcana")
      */
     public function arcana()
     {
@@ -33,11 +33,11 @@ class ImiecarController extends Controller
     }
 
     /**
-     * @Route("/arcana/list")
+     * @Route("/contact",name="contact")
      */
-    public function listeTrajet()
+    public function contact()
     {
-        return $this->render(':trajet:index.html.twig');
+        return $this->render('@Imiecar/Default/contact.html.twig');
 
     }
 
