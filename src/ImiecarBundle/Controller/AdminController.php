@@ -2,17 +2,17 @@
 
 namespace ImiecarBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class AdminController extends Controller
 {
-    /**
-     * @Route("/")
-     */
+	/**
+	 * @Route("/admin/", name="homeAdmin")
+	 */
     public function indexAction()
     {
-        return $this->render('ImiecarBundle:Default:index.html.twig');
+        return $this->render('@Imiecar/admin/base.admin.html.twig.');
     }
 
 

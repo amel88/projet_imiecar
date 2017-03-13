@@ -1,5 +1,22 @@
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 imiecar:
     resource: "@ImiecarBundle/Controller/"
     type:     annotation
     prefix:   /
 
+#login:
+#    path: /login
+#    defaults:
+#        _controller: UserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+
+#logout:
+#    path: /logout
+#

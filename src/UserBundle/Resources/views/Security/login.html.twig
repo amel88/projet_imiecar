@@ -1,0 +1,59 @@
+{% extends'@Imiecar/Default/base.html.twig' %}
+
+{% block body %}
+    <style>
+        form {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            padding-top: 15px;
+        }
+    </style>
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1> ImieCar </h1>
+            <h3>Site de co-voiturage des campus IMIE.</h3>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <form class="form-horizontal col-sm-12" id="login-form" method="POST"
+                              action="{{ path('login_check') }}">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-4 control-label">Login :</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control col-sm-12" id="username" name="_username"
+                                           value="{{ last_username }}"
+                                           placeholder="User Name"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-4 control-label">Mot de passe :</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control col-sm-10" id="password" name="_password"
+                                           placeholder="Password"/>
+                                </div>
+                            </div>
+                            {% if error %}
+                                <div class="form-group">
+                                    <h3>
+                                        <span class="label label-warning col-sm-offset-1 col-sm-10">{{ error.message }}</span>
+                                    </h3>
+                                </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <hr/>
+                                    <button class="btn btn-dark btn-lg" type="submit">Connexion</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+{% endblock %}
