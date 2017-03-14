@@ -3,8 +3,10 @@
 {% block body %}
     <h1>Trajet</h1>
 
+    <p>Vous avez choisi ce trajet:</p><br>
     <table>
         <tbody>
+
             <tr>
                 <th>Id</th>
                 <td>{{ trajet.id }}</td>
@@ -44,21 +46,31 @@
             <tr>
                 <th>Id de l'utilisateur</th>
                 <td>{{ trajet.idUtilisateur }}</td>
-            </tr>
+            </tr><br>
+
         </tbody>
     </table>
 
+        <input type="button" value="confirmer">
+        <br>
+
+        <p>Vous allez recevoir un sms de confirmation</p>
+
+
     <ul>
         <li>
-            <a href="{{ path('trajet_index') }}">Back to the list</a>
+            <a href="{{ path('choix_trajet') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('trajet_edit', { 'id': trajet.id }) }}">Edit</a>
+            <a href="{{ path('choix_trajet') }}">Annuler</a>
         </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        {#<li>#}
+            {#<a href="{{ path('trajet_edit', { 'id': trajet.id }) }}">Edit</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        {#</li>#}
     </ul>
 {% endblock %}

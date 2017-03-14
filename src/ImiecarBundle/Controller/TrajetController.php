@@ -54,6 +54,22 @@ class TrajetController extends Controller
             ));
 
     }
+    /**
+     * Finds and displays a trajet entity.
+     *
+     * @Route("/choisir/{id}", name="choix_show")
+     * @Method("GET")
+     */
+    public function showAction1(Trajet $trajet)
+    {
+        $deleteForm = $this->createDeleteForm($trajet);
+
+        return $this->render('choix/show.html.twig', array(
+            'trajet' => $trajet,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
 
 
     /**
