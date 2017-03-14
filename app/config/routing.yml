@@ -1,3 +1,23 @@
+imiecar_campus:
+    resource: "@ImiecarBundle/Controller/CampusController.php"
+    type:     annotation
+
+imiecar_campus:
+    resource: "@ImiecarBundle/Controller/CampusController.php"
+    type:     annotation
+
+imiecar_campus:
+    resource: "@ImiecarBundle/Controller/CampusController.php"
+    type:     annotation
+
+imiecar_campus:
+    resource: "@ImiecarBundle/Controller/CampusController.php"
+    type:     annotation
+
+imiecar_ville:
+    resource: "@ImiecarBundle/Controller/villeController.php"
+    type:     annotation
+
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation

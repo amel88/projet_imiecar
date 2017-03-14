@@ -41,5 +41,12 @@ class ImiecarController extends Controller
 
     }
 
+    /**
+     * @Route("/creer",name="creer")
+     */
+    public function propositionTrajet()
+    {
+        return $this->render('@Imiecar/Default/propositionTrajet.html.twig');
 
+    }
 }
