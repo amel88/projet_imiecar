@@ -21,13 +21,13 @@
 
 						<nav id="nav">
 							<ul>
-								<li class="current"><a href="arcana.html.twig">Home</a></li>
+								<li class="current"><a href="{{ path('arcana') }}">Accueil</a></li>
 								<li>
 									<a href="#">Trajets</a>
 									<ul>
-										<li><a href="#">rechercher un trajet</a></li>
-										<li><a href="#">liste des trajets</a></li>
-										<li><a href="#">modifier un trajet</a></li>
+										<li><a href="{{ path('trajet_new') }}">creer un trajet</a></li>
+										<li><a href="{{ path('choix_trajet') }}">choisir un trajet</a></li>
+										{#<li><a href="{{ path('') }}"></a></li>#}
 										<li>
 											<a href="#">Submenu</a>
 											<ul>
