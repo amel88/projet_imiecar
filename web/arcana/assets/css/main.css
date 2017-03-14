@@ -46,6 +46,7 @@
 
 	body {
 		-webkit-text-size-adjust: none;
+
 	}
 
 /* Box Model */
@@ -2464,10 +2465,7 @@
 				text-align: left;
 			}
 
-#banniere{
-	position: relative;
 
-}
 
 
 	}
