@@ -4,7 +4,7 @@ namespace ImiecarBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class villeControllerTest extends WebTestCase
+class VilleControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()

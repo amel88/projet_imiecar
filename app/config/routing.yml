@@ -1,3 +1,7 @@
+imiecar_ville:
+    resource: "@ImiecarBundle/Controller/VilleController.php"
+    type:     annotation
+
 imiecar_campus:
     resource: "@ImiecarBundle/Controller/CampusController.php"
     type:     annotation
