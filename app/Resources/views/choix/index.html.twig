@@ -44,7 +44,10 @@
                 <td>{{ trajet.idUtilisateur }}</td>
                 <td>
                     <ul>
-                            <input type="submit" value="Choisir" />
+
+                        <li>
+                            <a href="{{ path('choix_show', { 'id': trajet.id }) }}">choisir</a>
+                        </li>
 
                         <li>
                             <a href="{{ path('trajet_show', { 'id': trajet.id }) }}">show</a>
