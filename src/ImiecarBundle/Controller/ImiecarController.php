@@ -28,7 +28,7 @@ class ImiecarController extends Controller
      */
     public function arcana()
     {
-        return $this->render('@Imiecar/Default/arcana.html.twig');
+        return $this->render('base.html.twig');
 
     }
 
@@ -46,7 +46,7 @@ class ImiecarController extends Controller
      */
     public function propositionTrajet()
     {
-        return $this->render('@Imiecar/Default/propositionTrajet.html.twig');
+        return $this->render('ville/index.html.twig');
 
     }
 }
