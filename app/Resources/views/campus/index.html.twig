@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Campuses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Adressecampus</th>
+                <th>Nomcampus</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for campus in campuses %}
+            <tr>
+                <td><a href="{{ path('campus_show', { 'id': campus.id }) }}">{{ campus.id }}</a></td>
+                <td>{{ campus.adresseCampus }}</td>
+                <td>{{ campus.nomCampus }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('campus_show', { 'id': campus.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('campus_edit', { 'id': campus.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('campus_new') }}">Create a new campus</a>
+        </li>
+    </ul>
+{% endblock %}
