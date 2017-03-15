@@ -2,6 +2,8 @@
 
 namespace ImiecarBundle\Form;
 
+use ImiecarBundle\Entity\Ville;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -17,7 +19,10 @@ class ChoixTrajetType extends AbstractType
     {
         $builder->add('date',  DateType::class, array(
             'format' => 'dd-MM-yyyy',))
-            ->add('villeDepart')
+            ->add('villeDepart' ,EntityType::class, array(
+                "class" => Ville::class,
+                "choice_label" => 'ville'
+            ))
             ->add('heureDepart')
             ->add('villeArrivee')
             ->add('heureArrivee');
