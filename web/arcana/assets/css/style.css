@@ -15,6 +15,8 @@ body{
     /*background-color: darkolivegreen;*/
     color: black;
 
+   /*background-image: url("/web/arcana/images/route.jpg");*/
+
 }
 
 #message{
@@ -24,9 +26,13 @@ body{
 #table{
     width: 1600px;
 }
-#footer{
-    background-color: lightblue;
-}
+
+
+
+
+/*#footer{*/
+    /*background-color: lightblue;*/
+/*}*/
 
 /*form{*/
     /*background-color: #333;*/
