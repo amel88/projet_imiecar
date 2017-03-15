@@ -1,5 +1,23 @@
 #contact{
-    display:block;
-    float:left;
-    width:100px;
+
+ /*padding-left: 650px;*/
+
 }
+
+
+body{
+    background-color: #333;
+    color: white;
+    /*text-align: right;*/
+
+}
+
+#footer{
+    background-color: whitesmoke;
+}
+
+#banniere{
+
+
+}
+
