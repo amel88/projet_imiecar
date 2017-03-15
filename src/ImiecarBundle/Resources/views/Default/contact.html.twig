@@ -2,11 +2,12 @@
 
 
 {% block body %}
+    <div id="contact">
 <section class="6u 12u(narrower)">
     <h3>Formulaire de contact</h3>
 
 
-    <form id="contact">
+    <form>
         <div class="row 50%">
             <div class="6u 12u(mobilep)">
                 <input type="text" name="name" id="name" placeholder="Name" />
@@ -15,7 +16,7 @@
                 <input type="email" name="email" id="email" placeholder="Email" />
             </div>
         </div>
-        <div class="row 50%">
+        <div id="zoneMessage" class="row 50%">
             <div class="12u">
                 <textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
             </div>
@@ -29,4 +30,5 @@
         </div>
     </form>
 </section>
+    </div>
 {% endblock%}

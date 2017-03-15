@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<div id="trajetChoix">
     {{ form_start(form) }}
     {{ form_row(form.date) }}<br>
     {{ form_row(form.villeDepart) }}<br>
@@ -13,7 +13,7 @@
 
     <h1>Trajets list</h1>
 
-    <table>
+    <table id="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -62,4 +62,5 @@
             <a href="{{ path('choix_trajet') }}">Choisir un nouveau trajet</a>
         </li>
     </ul>
+</div>
 {% endblock %}
