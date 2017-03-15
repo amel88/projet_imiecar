@@ -1,82 +1,82 @@
-{% extends'@Imiecar/chris/base.html.twig' %}
+{#{% extends'@Imiecar/Default/base.html.twig' %}#}
 
-{% block body %}
-    <style>
-        form {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 10px;
-            padding-top: 15px;
-        }
-    </style>
-    <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1> ImieCar </h1>
-            <h3>Site de co-voiturage des campus IMIE.</h3>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <form class="form-horizontal col-sm-12" id="register-form" method="POST" action="">
-                            <div class="form-group has-feedback has-feedback-left">
-                                <label class="col-sm-12 "><h4>Renseignez votre compte:</h4> </label>
-                                <div class="col-sm-12">
-                                    <i class="form-control-feedback glyphicon glyphicon-user"></i>
-                                    <input type="text" class="form-control col-sm-12" id="lastname" name="_lastname"
-                                           placeholder="Nom"/>
-                                </div>
-                            </div>
+{#{% block body %}#}
+    {#<style>#}
+        {#form {#}
+            {#background-color: rgba(0, 0, 0, 0.3);#}
+            {#border-radius: 10px;#}
+            {#padding: 10px;#}
+            {#padding-top: 15px;#}
+        {#}#}
+    {#</style>#}
+    {#<header id="top" class="header">#}
+        {#<div class="text-vertical-center">#}
+            {#<h1> ImieCar </h1>#}
+            {#<h3>Site de co-voiturage des campus IMIE.</h3>#}
+            {#<br>#}
+            {#<div class="container">#}
+                {#<div class="row">#}
+                    {#<div class="col-sm-4"></div>#}
+                    {#<div class="col-sm-4">#}
+                        {#<form class="form-horizontal col-sm-12" id="register-form" method="POST" action="">#}
+                            {#<div class="form-group has-feedback has-feedback-left">#}
+                                {#<label class="col-sm-12 "><h4>Renseignez votre compte:</h4> </label>#}
+                                {#<div class="col-sm-12">#}
+                                    {#<i class="form-control-feedback glyphicon glyphicon-user"></i>#}
+                                    {#<input type="text" class="form-control col-sm-12" id="lastname" name="_lastname"#}
+                                           {#placeholder="Nom"/>#}
+                                {#</div>#}
+                            {#</div>#}
 
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control col-sm-12" id="fistname" name="_fistname"
-                                           placeholder="Prénom"/>
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<input type="text" class="form-control col-sm-12" id="fistname" name="_fistname"#}
+                                           {#placeholder="Prénom"/>#}
+                                {#</div>#}
+                            {#</div>#}
 
-                            <div class="form-group has-feedback has-feedback-left">
-                                <div class="col-sm-12">
-                                    <i class="form-control-feedback glyphicon glyphicon-envelope"></i>
-                                  <input type="email" class="form-control col-sm-10 " id="email" name="_email"
-                                           placeholder="E-mail"/>
-                                </div>
-                            </div>
-                            <hr>
+                            {#<div class="form-group has-feedback has-feedback-left">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<i class="form-control-feedback glyphicon glyphicon-envelope"></i>#}
+                                  {#<input type="email" class="form-control col-sm-10 " id="email" name="_email"#}
+                                           {#placeholder="E-mail"/>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<hr>#}
 
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control col-sm-12" id="peudo" name="_pseudo"
-                                           placeholder="Pseudo"/>
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<input type="text" class="form-control col-sm-12" id="peudo" name="_pseudo"#}
+                                           {#placeholder="Pseudo"/>#}
+                                {#</div>#}
+                            {#</div>#}
 
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="password" class="form-control col-sm-10" id="password" name="_password"
-                                           placeholder="Mot de passe"/>
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<input type="password" class="form-control col-sm-10" id="password" name="_password"#}
+                                           {#placeholder="Mot de passe"/>#}
+                                {#</div>#}
+                            {#</div>#}
 
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="password" class="form-control col-sm-10" id="password" name="_password"
-                                           placeholder="Confirmer le mot de passe"/>
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<input type="password" class="form-control col-sm-10" id="password" name="_password"#}
+                                           {#placeholder="Confirmer le mot de passe"/>#}
+                                {#</div>#}
+                            {#</div>#}
 
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <hr/>
-                                    <button class="btn btn-dark btn-lg" type="submit">Validez</button>
-                                    <input class="btn btn-dark btn-lg"type="button" value="Retour" onclick="history.go(-1)">
-                                </div>
-                            </div>
+                            {#<div class="form-group">#}
+                                {#<div class="col-sm-12">#}
+                                    {#<hr/>#}
+                                    {#<button class="btn btn-dark btn-lg" type="submit">Validez</button>#}
+                                    {#<input class="btn btn-dark btn-lg"type="button" value="Retour" onclick="history.go(-1)">#}
+                                {#</div>#}
+                            {#</div>#}
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-{% endblock %}
+                        {#</form>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</header>#}
+{#{% endblock %}#}

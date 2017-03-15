@@ -1,0 +1,80 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<style>
+    form {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        padding: 10px;
+        padding-top: 15px;
+    }
+</style>
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<div class="text-vertical-center">
+    <h1> ImieCar </h1>
+    <h3>Site de co-voiturage des campus IMIE.</h3>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form class="form-horizontal col-sm-12" id="login-form"
+                      action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                    {% endif %}
+                    <div class="form-group has-feedback has-feedback-left">
+                        <label class="col-sm-12 "><h4>Votre compte:</h4></label>
+                        <div class="col-sm-12">
+                            <i class="form-control-feedback glyphicon glyphicon-user"></i>
+
+                            <input type="text" class="form-control col-sm-12" id="username" name="_username"
+                                   value="{{ last_username }}"
+                                   placeholder="User Name"
+                                   required="required"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control col-sm-10" id="password" name="_password"
+                                   required="required" placeholder="Password"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="remember_me"><h4>{{ 'security.login.remember_me'|trans }}</h4></label>
+                            <input type="checkbox" class="form-control col-sm-10" id="remember_me"
+                                   name="_remember_me"
+                                   value="on"/>
+                        </div>
+                    </div>
+
+                    {% if error %}
+                        <div class="form-group">
+                            <h3>
+                                <span class="label label-warning col-sm-offset-1 col-sm-10">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                            </h3>
+                        </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <hr/>
+                            <input class="btn btn-dark btn-lg" type="submit" id="_submit" name="_submit"
+                                   value="Connexion"/>
+                            <input class="btn btn-dark btn-lg" type="button" value="Retour"
+                                   onclick="history.go(-1)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
