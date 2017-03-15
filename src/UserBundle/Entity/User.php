@@ -21,17 +21,17 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string")
      */
-    protected $nom;
+    protected $lastname;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $prenom;
+    protected $firstname;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
-    protected $pseudo;
+    protected $idCampus;
 
     public function __construct()
     {
@@ -40,74 +40,73 @@ class User extends BaseUser
     }
 
     /**
-     * Set nom
+     * Set lastname
      *
-     * @param string $nom
+     * @param string $lastname
      *
      * @return User
      */
-    public function setNom($nom)
+    public function setLastName($lastname)
     {
-        $this->nom = $nom;
+        $this->lastname = $lastname;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get lastname
      *
      * @return string
      */
-    public function getNom()
+    public function getLastname()
     {
-        return $this->nom;
+        return $this->lastname;
     }
 
     /**
-     * Set prenom
+     * Set firstname
      *
-     * @param string $prenom
+     * @param string $firstname
      *
      * @return User
      */
-    public function setPrenom($prenom)
+    public function setfirstname($firstname)
     {
-        $this->prenom = $prenom;
-
+        $this->firstname = $firstname;
         return $this;
     }
 
     /**
-     * Get prenom
+     * Get firstName
      *
      * @return string
      */
-    public function getPrenom()
+    public function getfirstname()
     {
-        return $this->prenom;
+        return $this->firstname;
     }
 
     /**
-     * Set pseudo
+     * Set idCampus
      *
-     * @param string $pseudo
+     * @param integer $idCampus
      *
      * @return User
      */
-    public function setPseudo($pseudo)
+    public function setIdCampus($idCampus)
     {
-        $this->pseudo = $pseudo;
-
+        $this->idCampus = $idCampus;
         return $this;
     }
 
     /**
-     * Get pseudo
+     * Get idCampus
      *
-     * @return string
+     * @return integer
      */
-    public function getPseudo()
+    public function getIdCampus()
     {
-        return $this->pseudo;
+        return $this->idCampus;
     }
+
 }
