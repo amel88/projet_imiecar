@@ -1,17 +1,15 @@
 {% extends '@Imiecar/Default/base.html.twig' %}
 
 {% block body %}
-    <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1> ImieCar </h1>
-            <h3>Site de co-voiturage des campus IMIE.</h3>
-            <br>
-            <a href="{{ path('new') }}" class="btn btn-dark btn-lg">Créer un compte</a>
-            <a href="{{ path('login') }}" class="btn btn-dark btn-lg">Connectez-Vous</a>
-            <hr>
-            <div class="form-group">
-                <a href="" class="btn btn-primary btn-lg">Trajets</a>
-            </div>
+    <div class="text-vertical-center col-sm-12">
+        <h1> ImieCar </h1>
+        <h3>Site de co-voiturage des campus IMIE.</h3>
+        <br>
+        <a href="{{ path('fos_user_registration_register') }}" class="btn btn-dark btn-lg">Créer un compte</a>
+        <a href="{{ path('fos_user_security_login') }}" class="btn btn-dark btn-lg">Connectez-Vous</a>
+        <hr>
+        <div class="form-group">
+            <a href="" class="btn btn-primary btn-lg">Trajets</a>
         </div>
-    </header>
+    </div>
 {% endblock %}
