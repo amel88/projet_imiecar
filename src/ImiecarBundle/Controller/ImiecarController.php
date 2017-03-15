@@ -46,7 +46,7 @@ class ImiecarController extends Controller
      */
     public function propositionTrajet()
     {
-        return $this->render('ville/index.html.twig');
+        return $this->render(':ville:show.html.twig');
 
     }
 }
