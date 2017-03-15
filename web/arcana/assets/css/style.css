@@ -7,17 +7,24 @@ width: 500px;
 #contact{
     padding-left: 150px;
     width: 1600px;
+
 }
 
-body{
-    /*background-color: #333;*/
-    background-color: lightgray;
-    /*background-color: darkolivegreen;*/
+body,html{
+
     color: black;
+   background-image: url("/arcana/images/route.jpg");
+    height: 100%;
+    background-attachment: fixed;
 
-   /*background-image: url("/web/arcana/images/route.jpg");*/
 
 }
+
+#banniere{
+
+
+}
+
 
 #message{
     width:700px;
@@ -28,13 +35,22 @@ body{
 }
 
 
+#footer{
+    background-color: lightgray;
 
 
-/*#footer{*/
-    /*background-color: lightblue;*/
-/*}*/
+}
 
-/*form{*/
-    /*background-color: #333;*/
-/*}*/
+form{
+    background-color: whitesmoke;
+}
 
+#header{
+
+height: 20%;
+}
+
+footer{
+    height: 20%;
+
+}
