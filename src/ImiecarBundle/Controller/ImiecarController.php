@@ -12,25 +12,17 @@ class ImiecarController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('ImiecarBundle::index.html.twig');
-    }
-
-    /**
-    * @Route("/welcome", name="welcome")
-    */
-    public function welcomeAction()
-    {
-        return $this->render('@Imiecar/welcome.html.twig');
-    }
-
-    /**
-     * @Route("/arcana",name="arcana")
-     */
-    public function arcana()
-    {
         return $this->render('base.html.twig');
-
     }
+
+//    /**
+//     * @Route("/arcana",name="arcana")
+//     */
+//    public function arcana()
+//    {
+//        return $this->render('base.html.twig');
+//
+//    }
 
     /**
      * @Route("/contact",name="contact")
