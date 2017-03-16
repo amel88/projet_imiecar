@@ -2,20 +2,24 @@ imiecar_ville:
     resource: "@ImiecarBundle/Controller/VilleController.php"
     type:     annotation
 
-
 imiecar_campus:
     resource: "@ImiecarBundle/Controller/CampusController.php"
     type:     annotation
+
+imiecar:
+    resource: "@ImiecarBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 user:
     resource: "@UserBundle/Controller/"
     type:     annotation
     prefix:   /
 
-imiecar:
-    resource: "@ImiecarBundle/Controller/"
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
