@@ -82,3 +82,44 @@ fos_user:
     registration:
         form:
             type: UserBundle\Form\RegistrationType
+
+#fos_rest:
+#    format_listener:
+#        enabled: true
+#        rules:
+#            # ... previous rules declarations
+#            - { path: '^/admin', stop: true }  # <-- add this line
+
+easy_admin:
+    site_name: 'ACME <em style="font-size: 80%;">EmieCar.</em>'
+    design:
+        brand_color: 'rgba(160, 0, 0, 0.85)'
+#        color_scheme: 'light'
+    entities:
+        Campus:
+            class: ImiecarBundle\Entity\Campus
+            label: 'Campus'
+            list:
+                tile: "liste des campus"
+        Villes:
+            class: ImiecarBundle\Entity\Ville
+            label: 'Villes'
+            list:
+                tile: "liste des villes"
+        Trajets:
+            class: ImiecarBundle\Entity\Trajet
+            label: 'Trajets'
+            list:
+                tile: "liste des trajets"
+        User:
+            class: UserBundle\Entity\User
+            label: 'Utilisateurs'
+            form:
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    - lastLogin
+                    # if administrators are allowed to edit users' passwords and roles, add this:
+                    - { property: 'plainPassword', type: 'text', type_options: { required: false } }
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
