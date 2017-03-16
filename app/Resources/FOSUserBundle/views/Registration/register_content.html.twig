@@ -16,12 +16,15 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <form class="form-horizontal col-sm-12" id="register-form">
-                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {#<form class="form-horizontal col-sm-12" id="register-form">#}
+
+
+                    {{ form_start(form, {'method': 'POST', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
                         {{ form_widget(form.lastname,{ 'attr': { 'placeholder': 'Nom'} }) }}
                         {{ form_widget(form.firstname,{ 'attr': { 'placeholder': 'Prénom'} }) }}
                         {{ form_widget(form.username,{ 'attr': { 'placeholder': 'Nom d\'utilisateur'} }) }}
+                        {{ form_widget(form.idCampus,{ 'attr': { 'placeholder': 'Campus'} }) }}
                     <hr>
                         {{ form_widget(form.email,{ 'attr': { 'placeholder': 'email'} }) }}
                     <hr>
@@ -32,11 +35,11 @@
                             <button type="submit" class="btn-dark btn btn-md">{{ 'Validez' }}</button>
                             <button type="button" class="btn-dark btn btn-md"  onClick="location.href='/'">{{ 'Annulez' }}</button>
                         </div>
-                </form>
+                {#</form>#}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
 </div>
 
 
-{{ form_end(form) }}
