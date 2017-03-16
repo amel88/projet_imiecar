@@ -5,12 +5,10 @@
 <head>
     <title>ImieCar</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
+    {#<meta name="viewport" content="width=device-width, initial-scale=1" />#}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
 </head>
 <body>
@@ -20,12 +18,12 @@
         <nav id="nav">
             <ul>
                 <li class="current"><a href="/">Accueil</a></li>
-                <li>
-                    <a href="#">Trajets</a>
+                <li><a href="#">Trajets</a>
                     <ul>
                         <li><a href="{{ path('trajet_new') }}">Proposer un trajet</a></li>
                         <li><a href="{{ path('choix_trajet') }}">choisir un trajet</a></li>
                         <li><a href="{{ path('creer') }}"> proposition trajet</a></li>
+
                         <li>
                             <a href="#">Submenu</a>
                             <ul>
@@ -43,40 +41,47 @@
                 <li><a href="">Carte</a></li>
                 <li><a href="">Help</a></li>
                 <li><a href="{{ path('contact') }}">Contact</a></li>
+                <li><a href="#">Compte</a>
+                    <ul>
+                        <li><a href="/logout">Déconnection</a></li>
+                    </ul>
+                </li>
+                <li class="current"><a style="text-align: right"  href="#">Bonjour  {{ app.user.firstname }} {{ app.user.lastname }}</a></li>
+
+
             </ul>
         </nav>
 
     </div>
 
-   {% block body %} <div id="page"></div>{% endblock %}
+    <div id="page">{% block body %}{% endblock %}</div>
 
-<footer id="footer">
+    <footer id="footer">
 
-    <!-- Icons -->
-    <ul class="icons">
-        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-    </ul>
-
-    <!-- Copyright -->
-    <div class="copyright">
-        <ul class="menu">
-            <li>&copy; Imiecar. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
         </ul>
-    </div>
+        <!-- Copyright -->
+        <div class="copyright">
+            <ul class="menu">
+                <li>&copy; Imiecar. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Team: Amel Vincent Christopher</a></li>
+            </ul>
+        </div>
 
-</footer>
+    </footer>
 
-<!-- Scripts -->
-<script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('arcana/assets/js/jquery.dropotron.min.js') }}"></script>
-<script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
-<script src="{{ asset('arcana/assets/js/util.js') }}"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
+    <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('arcana/assets/js/jquery.dropotron.min.js') }}"></script>
+    <script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
+    <script src="{{ asset('arcana/assets/js/util.js') }}"></script>
+    <script src="{{ asset('arcana/assets/js/main.js') }}"></script>
 
-<script src="{{ asset('arcana/assets/js/main.js') }}"></script>
-
-</body>
+    </body>
 </html>

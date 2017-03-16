@@ -1,5 +1,4 @@
 #trajet, #trajetChoix {
-
     padding-left: 150px;
     width: 500px;
 }
@@ -10,16 +9,16 @@
 }
 
 body, html {
-
     color: black;
-    background-image: url("/arcana/images/route.jpg");
+    background-image: url('/arcana/images/route.jpg');
     height: 100%;
     background-attachment: fixed;
-
 }
 
 #page {
-    height: 60%;
+    height: 77%;
+    margin: 0px;
+    padding: 0px;
 }
 
 #message {
@@ -31,7 +30,12 @@ body, html {
 }
 
 #footer {
-    background-color: lightgray;
+    padding-top: 18px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    background-color: #000000;
+    opacity: 0.85;
+    height: 104px;
 }
 
 form {
@@ -39,10 +43,10 @@ form {
 }
 
 #header {
-
-    height: 20%;
+    height: 10%;
 }
 
+}
 footer {
-    height: 20%;
+    height: 77%;
 }
