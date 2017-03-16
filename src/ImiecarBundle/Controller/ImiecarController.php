@@ -15,14 +15,14 @@ class ImiecarController extends Controller
         return $this->render('::base.html.twig');
     }
 
-//    /**
-//     * @Route("/arcana",name="arcana")
-//     */
-//    public function arcana()
-//    {
-//        return $this->render('base.html.twig');
-//
-//    }
+    /**
+     * @Route("/admin")
+     */
+    public function adminAction()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
+    }
+
 
     /**
      * @Route("/contact",name="contact")
