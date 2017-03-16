@@ -10,17 +10,13 @@
     <script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
 </head>
 <body>
-
-
 <div id="page-wrapper">
-
     <!-- Header -->
     <div id="header">
-
-
 
         <nav id="nav">
             <ul>
@@ -55,16 +51,20 @@
 
     <!-- Banner -->
     {#<section id="banner">#}
-    <header>
+    {#<header>#}
         {#<h2>Arcana: <em>A responsive site template freebie by#}
-        <img id="banniere" src="{{ asset('arcana/images/route.png') }}">
+        {#<img id="banniere" src="{{ asset('arcana/images/route.jpg') }}">#}
+
         {#<a href="{{ asset('arcana/images/route.jpg') }}"></a>#}
         {#</em></h2>#}
         {#<a href="#" class="button">Learn More</a>#}
 
-    </header>
-    {% block body %}{% endblock %}
+    {#</header>#}
     {#</section>#}
+    {#<img id="banniere" src="{{ asset('arcana/images/route.jpg') }}">#}
+    <div id="page">{% block body %}{% endblock %}</div>
+
+
 
     <!-- Highlights -->
     {#<section class="wrapper style1">#}
@@ -96,27 +96,29 @@
     {#</section>#}
 
     <!-- Footer -->
-    {#<div id="footer">#}
 
-        {#<!-- Icons -->#}
-        {#<ul class="icons">#}
-            {#<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>#}
-            {#<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>#}
-            {#<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>#}
-            {#<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>#}
-            {#<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>#}
-        {#</ul>#}
-
-        {#<!-- Copyright -->#}
-        {#<div class="copyright">#}
-            {#<ul class="menu">#}
-                {#<li>&copy; Imiecar. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>#}
-            {#</ul>#}
-        {#</div>#}
-
-    {#</div>#}
 
 </div>
+
+<footer id="footer">
+
+    <!-- Icons -->
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+    </ul>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <ul class="menu">
+            <li>&copy; Imiecar. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
+
+</footer>
 
 <!-- Scripts -->
 <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
