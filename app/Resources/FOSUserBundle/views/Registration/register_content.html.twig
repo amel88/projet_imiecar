@@ -8,7 +8,7 @@
         padding-top: 15px;
     }
 </style>
-<div class="t" id="top">
+<div id="top">
     <h1> ImieCar </h1>
     <h3>Site de co-voiturage des campus IMIE.</h3>
     <br>
@@ -29,7 +29,8 @@
                         {{ form_widget(form.plainPassword.second, { 'attr': { 'placeholder': 'Vérification'} }) }}
                         <div>
                             <hr>
-                            <input class="btn btn-dark btn-lg" type="submit" value="{{ 'registration.submit'|trans }}"/>
+                            <button type="submit" class="btn-dark btn btn-md">{{ 'Validez' }}</button>
+                            <button type="button" class="btn-dark btn btn-md"  onClick="location.href='/'">{{ 'Annulez' }}</button>
                         </div>
                 </form>
             </div>
