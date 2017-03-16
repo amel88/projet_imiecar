@@ -11,6 +11,7 @@ class RegistrationType extends AbstractType
     {
         $builder->add('lastname');
         $builder->add('firstname');
+        $builder->add('idCampus');
     }
 
     public function getParent()
