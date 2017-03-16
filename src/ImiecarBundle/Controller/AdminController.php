@@ -1,21 +1,24 @@
 <?php
 
+
 namespace ImiecarBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 
-class AdminController extends Controller
+class AdminController extends BaseAdminController
 {
-	/**
-	 * @Route("/admin/", name="homeAdmin")
-	 */
-    public function indexAction()
+    public function createNewUserEntity()
     {
-        return $this->render('@Imiecar/admin/base.admin.html.twig.');
+        return $this->get('fos_user.user_manager')->createUser();
     }
 
+    public function prePersistUserEntity($user)
+    {
+        $this->get('fos_user.user_manager')->updateUser($user, false);
+    }
 
-
-
+    public function preUpdateUserEntity($user)
+    {
+        $this->get('fos_user.user_manager')->updateUser($user, false);
+    }
 }
