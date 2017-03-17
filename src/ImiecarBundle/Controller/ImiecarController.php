@@ -15,16 +15,7 @@ class ImiecarController extends Controller
         return $this->render('::base.html.twig');
     }
 
-//    /**
-//     * @Route("/arcana",name="arcana")
-//     */
-//    public function arcana()
-//    {
-//        return $this->render('base.html.twig');
-//
-//    }
-
-    /**
+     /**
      * @Route("/contact",name="contact")
      */
     public function contact()

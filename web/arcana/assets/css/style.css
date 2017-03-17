@@ -1,56 +1,52 @@
-#trajet,#trajetChoix{
-
- padding-left: 150px;
-width: 500px;
+#trajet, #trajetChoix {
+    padding-left: 150px;
+    width: 500px;
 }
 
-#contact{
+#contact {
     padding-left: 150px;
     width: 1600px;
-
 }
 
-body,html{
-
+body, html {
     color: black;
-   background-image: url("/arcana/images/route.jpg");
+    background-image: url('/arcana/images/route.jpg');
     height: 100%;
     background-attachment: fixed;
-
-
 }
 
-#banniere{
-
-
+#page {
+    height: 77%;
+    margin: 0px;
+    padding: 0px;
 }
 
-
-#message{
-    width:700px;
+#message {
+    width: 700px;
 }
 
-#table{
+#table {
     width: 1600px;
 }
 
-
-#footer{
-    background-color: lightgray;
-
-
+#footer {
+    padding-top: 18px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    background-color: #000000;
+    opacity: 0.85;
+    height: 104px;
 }
 
-form{
+form {
     background-color: whitesmoke;
 }
 
-#header{
-
-height: 20%;
+#header {
+    height: 10%;
 }
 
-footer{
-    height: 20%;
-
+}
+footer {
+    height: 77%;
 }

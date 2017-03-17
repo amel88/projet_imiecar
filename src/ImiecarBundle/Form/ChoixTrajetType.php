@@ -19,10 +19,7 @@ class ChoixTrajetType extends AbstractType
     {
         $builder->add('date',  DateType::class, array(
             'format' => 'dd-MM-yyyy',))
-            ->add('villeDepart' ,EntityType::class, array(
-                "class" => Ville::class,
-                "choice_label" => 'ville'
-            ))
+            ->add('villeDepart' )
             ->add('heureDepart')
             ->add('villeArrivee')
             ->add('heureArrivee');

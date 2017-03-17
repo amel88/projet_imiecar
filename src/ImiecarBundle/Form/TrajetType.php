@@ -19,21 +19,15 @@ class TrajetType extends AbstractType
     {
         $builder->add('date',  DateType::class, array(
             'format' => 'dd-MM-yyyy',))
-            ->add('villeDepart',EntityType::class, array(
-                "class" => Ville::class,
-                "choice_label" => 'ville'
-            ))
+            ->add('villeDepart')
             ->add('heureDepart')
-            ->add('villeIntermediaire', EntityType::class, array(
-                "class" => Ville::class,
-                "choice_label" => 'ville'
-            ))
+            ->add('villeIntermediaire')
             ->add('heureIntermediaire')
             ->add('villeArrivee')
             ->add('heureArrivee')
             ->add('nbPlaces', IntegerType::class, array(
-                'attr' => array('min' => 1, 'max' => 8)))
-            ->add('idUtilisateur');
+                'attr' => array('min' => 1, 'max' => 8)));
+
     }
     
     /**
