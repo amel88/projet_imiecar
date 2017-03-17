@@ -30,14 +30,14 @@ class Trajet
 
     /**
      * @var string
-     *@ORM\ManyToOne(targetEntity="ImiecarBundle\Entity\Ville", fetch="EAGER")
+     *
      * @ORM\Column(name="ville_depart", type="string", length=255)
      */
     private $villeDepart;
 
     /**
      * @var string
-     *@ORM\ManyToOne(targetEntity="ImiecarBundle\Entity\Ville", fetch="EAGER")
+     *
      * @ORM\Column(name="ville_intermediaire", type="string", length=255, nullable=true)
      */
     private $villeIntermediaire;
@@ -80,7 +80,7 @@ class Trajet
     /**
      * @var int
      *
-     * @ORM\Column(name="id_utilisateur", type="integer")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", fetch="EAGER")
      */
     private $idUtilisateur;
 

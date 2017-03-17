@@ -85,9 +85,10 @@ class TrajetController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $trajet->setIdUtilisateur($this->get('security.token_storage')->getToken()->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($trajet);
-            $em->flush($trajet);
+            $em->flush();
 
             return $this->redirectToRoute('trajet_show', array('id' => $trajet->getId()));
         }
