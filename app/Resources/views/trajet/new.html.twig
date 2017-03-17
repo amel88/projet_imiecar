@@ -7,9 +7,9 @@
 
     {{ form_start(form) }}
         {#{{ form_widget(form) }}#}
-    {{ form_row(form.date) }}<br>
-    {{ form_row(form.villeDepart) }}<br>
-    {{ form_row(form.heureDepart) }}<br>
+    {{ form_row(form.date) }}
+    {{ form_row(form.villeDepart) }}
+    {{ form_row(form.heureDepart) }}
     <script type="text/javascript">
         function afficherSuite(id) {
             document.getElementById(id).style.display = 'block';
@@ -18,14 +18,14 @@
     <div id="inter">
         <input type="button" value="Ajouter une ville intermediaire"  onclick="afficherSuite('suite')"><br><br>
         <div id="suite" style="display: none">
-    {{ form_row(form.villeIntermediaire) }}<br>
-    {{ form_row(form.heureIntermediaire) }}<br>
+    {{ form_row(form.villeIntermediaire) }}
+    {{ form_row(form.heureIntermediaire) }}
         </div>
-    </div><br>
-    {{ form_row(form.villeArrivee) }}<br>
-    {{ form_row(form.heureArrivee) }}<br>
-    {{ form_row(form.nbPlaces) }}<br>
-    {{ form_row(form.idUtilisateur) }}<br>
+    </div>
+    {{ form_row(form.villeArrivee) }}
+    {{ form_row(form.heureArrivee) }}
+    {{ form_row(form.nbPlaces) }}
+
 
      <br><br><input type="submit" value="Create" />
     {{ form_end(form) }}
