@@ -18,7 +18,8 @@ class TrajetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date',  DateType::class, array(
-            'format' => 'dd-MM-yyyy',))
+            'format' => 'dd-MM-yyyy',
+            'data' => new \DateTime("now")))
             ->add('villeDepart')
             ->add('heureDepart')
             ->add('villeIntermediaire')
