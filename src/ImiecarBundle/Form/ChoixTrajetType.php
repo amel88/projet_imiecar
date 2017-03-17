@@ -18,11 +18,9 @@ class ChoixTrajetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('date',  DateType::class, array(
-            'format' => 'dd-MM-yyyy',))
-            ->add('villeDepart' ,EntityType::class, array(
-                "class" => Ville::class,
-                "choice_label" => 'ville'
-            ))
+            'format' => 'dd-MM-yyyy',
+            'data' => new \DateTime("now")))
+            ->add('villeDepart' )
             ->add('heureDepart')
             ->add('villeArrivee')
             ->add('heureArrivee');
