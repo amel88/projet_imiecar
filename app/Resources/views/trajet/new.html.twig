@@ -1,39 +1,71 @@
 {% extends 'base.html.twig' %}
-
+{% form_theme form "bootstrap_3_layout.html.twig" %}
 
 {% block body %}
-    <div id="trajet">
-    <h1>Trajet creation</h1>
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+<div class="container">
+    <div class="row " id="page">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 ">
+            <div id="trajet" class="col-sm-12">
+                {#<form class="form-horizontal" id="new-form" action="{{ path("cree") }}" method="post">#}
+                {{ form_start(form, {'method': 'POST', 'action': path('trajet_new')}) }}
+                    <div id="entete"> <h1><strong>Nouveau trajet</strong></h1></div>
+                    <div class="row">
+                        <div style="text-align: center; " class="col-sm-12"><div class="trou2"> </div>
+                            {{ form_label(form.date, 'Date du trajet', {'label_attr':{'style':'color:#ade220'}}) }}
+                            {{ form_widget(form.date) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div style="text-align: center;padding-top: 1px" class="col-sm-4">
+                            {{ form_label(form.nbPlaces,'Nb place',{'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.nbPlaces,{ 'attr': { 'value': '1','class':'col-sm-2'}}) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div style="text-align: center;padding-top: 20px" class="col-sm-5">
+                            {{ form_label(form.heureDepart,'Heure dép.',{'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.heureDepart) }}
+                            {{ form_label(form.villeDepart, 'Ville de départ', {'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.villeDepart,{ 'attr': { 'placeholder': 'Ville de départ'} }) }}
+                        </div>
 
-    {{ form_start(form) }}
-        {#{{ form_widget(form) }}#}
-    {{ form_row(form.date) }}
-    {{ form_row(form.villeDepart) }}
-    {{ form_row(form.heureDepart) }}
-    <script type="text/javascript">
-        function afficherSuite(id) {
-            document.getElementById(id).style.display = 'block';
-        }
-    </script>
-    <div id="inter">
-        <input type="button" value="Ajouter une ville intermediaire"  onclick="afficherSuite('suite')"><br><br>
-        <div id="suite" style="display: none">
-    {{ form_row(form.villeIntermediaire) }}
-    {{ form_row(form.heureIntermediaire) }}
+                        <div style="text-align: center;padding-top: 20px" class="col-sm-5">
+                            {{ form_label(form.heureArrivee,'Heure arr.',{'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.heureArrivee) }}
+                            {{ form_label(form.villeArrivee, 'Ville de arrivée', {'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.villeArrivee,{ 'attr': { 'placeholder': 'Ville de arrivée'} }) }}
+                        </div>
+                    </div>
+                    <div class="troutop"> </div>
+                    <div style="text-align: center; padding: 0px " class="col-sm-12">
+                        <input style="border-top-left-radius:15px; border-bottom-right-radius: 15px" type="button" value="Ajouter une ville intermediaire" onclick="afficherSuite('suite')">
+                        <div id="suite" style="display: none" class="col-sm-12">
+                            {{ form_label(form.villeIntermediaire ,'Ville ',{'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.villeIntermediaire) }}
+                            {{ form_label(form.heureIntermediaire,'Heure de passage ',{'label_attr':{'style': 'color:#ade220'}}) }}
+                            {{ form_widget(form.heureIntermediaire) }}
+                            <div class="trou"> </div>
+                        </div>
+
+                        <div class="troubottom"> </div>
+                    </div>
+                    <div style="text-align: center; padding: 0px " class="col-sm-12">
+                        <div>
+                            <button style="border-top-left-radius:15px; border-bottom-right-radius: 15px" type="submit" name="_submit" class="button">{{ 'Validez' }}</button>
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+                <script type="text/javascript">
+                    function afficherSuite(id) {
+                        document.getElementById(id).style.display = 'block';
+                    }
+                </script>
+            </div>
         </div>
     </div>
-    {{ form_row(form.villeArrivee) }}
-    {{ form_row(form.heureArrivee) }}
-    {{ form_row(form.nbPlaces) }}
-
-
-     <br><br><input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('trajet_index') }}">Back to the list</a>
-        </li>
-    </ul>
-    </div>
+</div>
 {% endblock %}

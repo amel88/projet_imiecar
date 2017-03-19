@@ -42,6 +42,7 @@ twig:
     strict_variables: '%kernel.debug%'
     cache: false
 
+
 # Doctrine Configuration
 doctrine:
     dbal:
