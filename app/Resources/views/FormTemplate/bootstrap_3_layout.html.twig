@@ -1,6 +1,7 @@
 {# Widgets #}
 
 {%- block form_widget -%}
+
     {% if compound %}
         {{- block('form_widget_compound') -}}
     {% else %}
@@ -235,8 +236,10 @@
 {%- endblock submit_widget -%}
 
 {%- block reset_widget -%}
+    <div class="form-group">
     {%- set type = type|default('reset') -%}
     {{ block('button_widget') }}
+    </div>
 {%- endblock reset_widget -%}
 
 {# Labels #}
@@ -276,7 +279,7 @@
 {%- endblock repeated_row -%}
 
 {%- block form_row -%}
-    <div>
+    <div class="form-group">
         {{- form_label(form) -}}
         {{- form_errors(form) -}}
         {{- form_widget(form) -}}
