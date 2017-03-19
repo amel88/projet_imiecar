@@ -78,9 +78,8 @@ fos_user:
     firewall_name: main
     user_class: UserBundle\Entity\User
     from_email:
-        address: lvinternet@free.fr
-        sender_name: Imiecar
-
+        address: christopher.jacquot@gmail.com
+        sender_name: You
     registration:
         form:
             type: UserBundle\Form\RegistrationType
@@ -135,3 +134,4 @@ easy_admin:
                     # if administrators are allowed to edit users' passwords and roles, add this:
                     - { property: 'plainPassword', type: 'text', type_options: { required: false } }
                     - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+

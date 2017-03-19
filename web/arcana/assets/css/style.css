@@ -162,3 +162,10 @@ fieldset[disabled] .btn-validez.active {
     background-color: #555555;
 }
 
+
+#slogan{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 100px;
+    padding-top: 10%;
+}
