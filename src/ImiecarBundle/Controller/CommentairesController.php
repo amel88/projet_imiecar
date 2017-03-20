@@ -39,20 +39,20 @@ class CommentairesController extends Controller
      */
     public function newAction(Request $request)
     {
-        $commentaire = new Commentaire();
-        $form = $this->createForm('ImiecarBundle\Form\CommentairesType', $commentaire);
+        $commentaires = new Commentaires();
+        $form = $this->createForm('ImiecarBundle\Form\CommentairesType', $commentaires);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($commentaire);
-            $em->flush($commentaire);
+            $em->persist($commentaires);
+            $em->flush($commentaires);
 
-            return $this->redirectToRoute('commentaires_show', array('id' => $commentaire->getId()));
+            return $this->redirectToRoute('commentaires_show', array('id' => $commentaires->getId()));
         }
 
         return $this->render('commentaires/new.html.twig', array(
-            'commentaire' => $commentaire,
+            'commentaire' => $commentaires,
             'form' => $form->createView(),
         ));
     }
