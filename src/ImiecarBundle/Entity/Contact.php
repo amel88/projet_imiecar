@@ -24,23 +24,9 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="pseudo", type="string", length=255)
+     * @ORM\Column(name="message", type="string", length=500)
      */
-    private $pseudo;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="text", type="string", length=255)
-     */
-    private $text;
+    private $message;
 
 
     /**
@@ -54,75 +40,27 @@ class Contact
     }
 
     /**
-     * Set pseudo
+     * Set message
      *
-     * @param string $pseudo
+     * @param string $message
      *
      * @return Contact
      */
-    public function setPseudo($pseudo)
+    public function setMessage($message)
     {
-        $this->pseudo = $pseudo;
+        $this->message = $message;
 
         return $this;
     }
 
     /**
-     * Get pseudo
+     * Get message
      *
      * @return string
      */
-    public function getPseudo()
+    public function getMessage()
     {
-        return $this->pseudo;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Contact
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Set text
-     *
-     * @param string $text
-     *
-     * @return Contact
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * Get text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
+        return $this->message;
     }
 }
 
