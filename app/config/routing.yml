@@ -1,3 +1,7 @@
+imiecar_contact:
+    resource: "@ImiecarBundle/Controller/ContactController.php"
+    type:     annotation
+
 imiecar_commentaires:
     resource: "@ImiecarBundle/Controller/CommentairesController.php"
     type:     annotation
