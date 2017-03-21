@@ -26,10 +26,11 @@
                     </li>
                     <li><a href="">Consulter</a></li>
                     <li><a href="">Carte</a></li>
-                    <li><a href="{{ path('contact_new') }}">Contact</a></li>
+                    <li><a href="{{ path('contact_index') }}">Contact</a></li>
+                    <li><a href="{{ path('contact_new') }}">Contact en test</a></li>
                     <li><a href="#">Compte</a>
                         <ul>
-                            <li><a href="/logout">Déconnection</a></li>
+                            <li><a href="/logout">Déconnexion</a></li>
                             <li><a href="/admin">Gestion du site</a></li>
                         </ul>
                     </li>
@@ -37,22 +38,17 @@
                 </ul>
             </nav>
         </div>
-        {% block body %}<div id="slogan">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez librement<br><br><br><br><br><br>Sans commission</div>{% endblock %}
-        <div class="trou2"> </div>
-        <footer id="footer" class="col-sm-12">
-            <ul class="icons">
-                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-            </ul>
-            <!-- Copyright -->
-            <div class="copyright">
-                <ul class="menu">
-                    <li>&copy; Imiecar. All rights reserved</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                    <li><a>Team: Amel Vincent Christopher</a></li>
+           {#{% block body %}{% endblock %}#}
+        <div id="page">{% block body %}<div id="slogan" style="padding-bottom: 140px">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez librement<br><br><br><br><br><br>Sans commission</div>{% endblock %}</div>
+        <div class="trou2"></div>
+            <footer id="footer" class="col-sm-12">
+
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
                 </ul>
 
                 <!-- Copyright -->

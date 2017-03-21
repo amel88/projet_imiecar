@@ -13,7 +13,7 @@ security:
     firewalls:
         main:
             pattern: ^/
-            form_login:
+            form_login: 
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
             logout:       true
