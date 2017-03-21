@@ -48,6 +48,22 @@ class ContactController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush($contact);
+            //  ajout
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('hello')
+                ->setFrom('christopher.jacquot@gmail.com')
+                ->setTo('christopher.jacquot@gmail.com')
+                ->setBody(
+                    $this->renderView(
+
+                        ':contact:show.html.twig'
+                    ),
+                    'text/html'
+                );
+            $this->get('mailer')->send($message);
+
+             //  fin  de l'ajout
 
             return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
         }
@@ -114,6 +130,7 @@ class ContactController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($contact);
             $em->flush();
+
         }
 
         return $this->redirectToRoute('contact_index');
@@ -134,25 +151,6 @@ class ContactController extends Controller
             ->getForm()
         ;
     }
-
-
-//
-//            //ajout pour test
-//
-//            $message = \Swift_Message::newInstance()
-//            ->setSubject('hello')
-//                ->setFrom('christopher.jacquot@gmail.com')
-//                ->setTo('christopher.jacquot@gmail.com')
-//                ->setBody(
-//                    $this->renderView(
-//                // app/Resources/views/Emails/registration.html.twig
-//                    ':contact:show.html.twig'
-//                ),
-//                    'text/html'
-//                );
-//            $this->get('mailer')->send($message);
-//
-//          //fin ajout pour test
 
 
 }
