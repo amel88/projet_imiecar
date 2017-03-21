@@ -1,11 +1,10 @@
-#trajetChoix {
-}
+
 
 #trajet{
-    background-color: rgba(0,0,0,0.60);
-    width: 500px;
+    background-color: rgba(20,20,20,0.60);
+    /*width: 500px;*/
     padding: 0 0 15px 0;
-    width: auto;
+    /*width: auto;*/
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border: inset;
@@ -15,7 +14,7 @@
 
 #entete{
     /*background-color: rgba(40, 117, 40, 1);*/
-   color: #ade220;
+    color: #ade220;
     padding-top: 2px;
     border-bottom-style: inset;
     margin-top: 10px;
@@ -36,9 +35,8 @@ body, html {
 
 #page {
     /*background-color: rgba(0,0,0,0.40);*/
-    /*margin: 1em;*/
     /*border-radius: 10px;*/
-    height: 100%;
+    /*height: 100%;*/
     padding: 80px;
 }
 
@@ -80,36 +78,75 @@ form {
 .container {
     width: auto;
     height: auto;
-    padding: 0px;
     margin: 0px;
+    padding: 80px;
 }
 
 div {
-      padding: 0px;
-      margin: 0px;
+      padding-top: 0px;
+      margin:0px;
 }
 
-.trou {
+.fondtrajet{
+    background-color: rgba(64, 64, 64, 0.5);
+    margin-left: 1px;
+    margin-right: 1px;
+    border-top: inset;
+    border-top-width: 2px;
+    border-color: #ade220;
+    border-bottom-width: 3px;
+    border-bottom: inset;
+    border-bottom-color: #ade220;
+    border-right-width: 1px;
+    border-right: inset;
+    border-right-color: #ade220;
+    border-left-width: 1px;
+    border-left: inset;
+    border-left-color: #ade220;
+
+}
+
+.fondtrajet2{
+    background-color: rgba(25,150,25,0.5);
+    margin-left: 1px;
+    margin-right: 1px;
+    border-bottom: inset;
+    border-bottom-width: 2px;
+    border-color: #002c10;
+    border-right-width: 1px;
+    border-right: inset;
+    border-right-color: #ade220;
+    border-left-width: 1px;
+    border-left: inset;
+    border-left-color: #ade220;
+    border-top-width: 1px;
+    border-top: inset;
+    border-top-color: #ade220;
+
+
+}
+
+.troufoncé {
     padding: 1px 0 1px 0 ;
-    margin: 10px 0 10px 0;
-    background-color: #ade220;
+    background-color: #335623;
+
 }
 
 .trou2 {
     padding: 1px 0 1px 0 ;
-    margin: 0px 0 0px 0;
+    margin-bottom: 5px;
     background-color: #ade220;
 }
 
 .troutop {
     padding: 0;
-    margin: 20px 0 0px 0;
+    margin: 20px 0 0 0;
     background-color: #ade220;
 }
 
 .troubottom {
     padding: 0;
-    margin: 0px 0 20px 0;
+    margin: 0 0 20px 0;
     background-color: #ade220;
 }
 
@@ -168,4 +205,14 @@ fieldset[disabled] .btn-validez.active {
     color: whitesmoke;
     font-size: 100px;
     padding-top: 10%;
+}
+span{
+    font-size:20px;
+    color:#ade220;
+}
+
+.row {
+    margin: -0px 0 -1px -0px;
+    padding-left: 25px;
+    padding-right: 0px;
 }
