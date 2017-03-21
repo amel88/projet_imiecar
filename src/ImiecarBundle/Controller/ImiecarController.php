@@ -15,14 +15,6 @@ class ImiecarController extends Controller
         return $this->render('::base.html.twig');
     }
 
-//     /**
-//     * @Route("/contact",name="contact")
-//     */
-//    public function contact()
-//    {
-//        return $this->render('@Imiecar/Default/contact.html.twig');
-//
-//    }
 
     /**
      * @Route("/creer",name="creer")
@@ -66,5 +58,8 @@ class ImiecarController extends Controller
         return $this->render("base.html.twig");
 
     }
+
+
+
 
 }
