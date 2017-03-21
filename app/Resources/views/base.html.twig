@@ -26,10 +26,11 @@
                     </li>
                     <li><a href="">Consulter</a></li>
                     <li><a href="">Carte</a></li>
-                    <li><a href="{{ path('contact_new') }}">Contact</a></li>
+                    <li><a href="{{ path('contact_index') }}">Contact</a></li>
+                    <li><a href="{{ path('contact_new') }}">Contact en test</a></li>
                     <li><a href="#">Compte</a>
                         <ul>
-                            <li><a href="/logout">Déconnection</a></li>
+                            <li><a href="/logout">Déconnexion</a></li>
                             <li><a href="/admin">Gestion du site</a></li>
                         </ul>
                     </li>
@@ -37,8 +38,8 @@
                 </ul>
             </nav>
         </div>
-           {% block body %}{% endblock %}
-
+           {#{% block body %}{% endblock %}#}
+        <div id="page">{% block body %}<div id="slogan" style="padding-bottom: 140px">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez librement<br><br><br><br><br><br>Sans commission</div>{% endblock %}</div>
         <div class="trou2"></div>
             <footer id="footer" class="col-sm-12">
 
