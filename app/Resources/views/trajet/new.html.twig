@@ -3,12 +3,12 @@
 
 {% block body %}
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-<div class="container">
-    <div class="row " id="page">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6 ">
-            <div id="trajet" class="col-sm-12">
-                {#<form class="form-horizontal" id="new-form" action="{{ path("cree") }}" method="post">#}
+    {#<link rel="stylesheet" href="{{ asset('css/tuto.css') }}" />#}
+
+<div  class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-sm-6 "id="trajet">
+            <div  class="col-sm-12">
                 {{ form_start(form, {'method': 'POST', 'action': path('trajet_new')}) }}
                     <div id="entete"> <h1><strong>Nouveau trajet</strong></h1></div>
                     <div class="row">
@@ -17,7 +17,7 @@
                             {{ form_widget(form.date) }}
                         </div>
                     </div>
-                    <div class="row">
+
                         <div class="col-sm-4"></div>
                         <div style="text-align: center;padding-top: 1px" class="col-sm-4">
                             {{ form_label(form.nbPlaces,'Nb place',{'label_attr':{'style': 'color:#ade220'}}) }}
