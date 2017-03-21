@@ -154,8 +154,8 @@ class ContactController extends Controller
             //ajout pour test
 
             $message = \Swift_Message::newInstance()
-            ->setSubject(fos_user.username)
-                ->setFrom(fos_user.email)
+            ->setSubject('hello')
+                ->setFrom('christopher.jacquot@gmail.com')
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody(
                     $this->renderView(
@@ -163,8 +163,7 @@ class ContactController extends Controller
                     ':contact:show.html.twig'
                 ),
                     'text/html'
-                )
-            ;
+                );
             $this->get('mailer')->send($message);
 
           //fin ajout pour test
