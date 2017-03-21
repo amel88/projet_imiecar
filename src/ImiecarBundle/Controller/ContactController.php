@@ -31,31 +31,31 @@ class ContactController extends Controller
         ));
     }
 
-    /**
-     * Creates a new contact entity.
-     *
-     * @Route("/new", name="contact_new")
-     * @Method({"GET", "POST"})
-     */
-    public function newAction(Request $request)
-    {
-        $contact = new Contact();
-        $form = $this->createForm('ImiecarBundle\Form\ContactType', $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($contact);
-            $em->flush($contact);
-
-            return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
-        }
-
-        return $this->render('contact/new.html.twig', array(
-            'contact' => $contact,
-            'form' => $form->createView(),
-        ));
-    }
+//    /**
+//     * Creates a new contact entity.
+//     *
+//     * @Route("/new", name="contact_new")
+//     * @Method({"GET", "POST"})
+//     */
+//    public function newAction(Request $request)
+//    {
+//        $contact = new Contact();
+//        $form = $this->createForm('ImiecarBundle\Form\ContactType', $contact);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($contact);
+//            $em->flush($contact);
+//
+//            return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
+//        }
+//
+//        return $this->render('contact/new.html.twig', array(
+//            'contact' => $contact,
+//            'form' => $form->createView(),
+//        ));
+//    }
 
     /**
      * Finds and displays a contact entity.
@@ -133,4 +133,49 @@ class ContactController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Creates a new contact entity.
+     *
+     * @Route("/new", name="contact_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $contact = new Contact();
+        $form = $this->createForm('ImiecarBundle\Form\ContactType', $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($contact);
+            $em->flush($contact);
+
+            //ajout pour test
+
+            $message = \Swift_Message::newInstance()
+            ->setSubject(fos_user.username)
+                ->setFrom(fos_user.email)
+                ->setTo('christopher.jacquot@gmail.com')
+                ->setBody(
+                    $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    ':contact:show.html.twig'
+                ),
+                    'text/html'
+                )
+            ;
+            $this->get('mailer')->send($message);
+
+          //fin ajout pour test
+
+            return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
+        }
+
+        return $this->render('contact/new.html.twig', array(
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ));
+    }
+
 }
