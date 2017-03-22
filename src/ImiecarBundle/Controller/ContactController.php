@@ -51,7 +51,7 @@ class ContactController extends Controller
             //  ajout
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('hello')
+                ->setSubject('Hello World')
                 ->setFrom('christopher.jacquot@gmail.com')
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody(
