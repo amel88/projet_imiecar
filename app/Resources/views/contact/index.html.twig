@@ -1,31 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Contacts list</h1>
+    {#<h1>Contacts list</h1>#}
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Message</th>
-                <th>Actions</th>
+                {#<th>Id</th>#}
+                <th>Message(s) envoyé(s) :<br><br></th>
+                {#<th>Actions</th>#}
             </tr>
         </thead>
         <tbody>
         {% for contact in contacts %}
             <tr>
-                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
-                <td>{{ contact.message }}</td>
+                {#<td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>#}
+                <div mess><td>{{ contact.message }}<br><br></td></div>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('contact_edit', { 'id': contact.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('contact_edit', { 'id': contact.id }) }}">edit</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</td>#}
             </tr>
         {% endfor %}
         </tbody>
@@ -33,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('contact_new') }}">Envoyer un nouveau message</a>
+            <a href="{{ path('contact_new') }}">Envoyer un message</a>
         </li>
     </ul>
 {% endblock %}

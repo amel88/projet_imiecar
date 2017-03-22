@@ -6,15 +6,15 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ commentaire.id }}</td>
+                {#<th>Id</th>#}
+                {#<td>{{ commentaire.id }}</td>#}
             </tr>
             <tr>
                 <th>Date</th>
                 <td>{% if commentaire.date %}{{ commentaire.date|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Text</th>
+                <th>Commentaire : </th>
                 <td>{{ commentaire.text }}</td>
             </tr>
         </tbody>
