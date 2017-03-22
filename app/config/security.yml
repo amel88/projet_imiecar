@@ -11,11 +11,15 @@ security:
             id: fos_user.user_provider.username
 
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|image|js)/
+            security: false
         main:
             pattern: ^/
-            form_login: 
+            form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+
             logout:       true
             anonymous:    true
 
