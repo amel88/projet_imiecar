@@ -1,75 +1,77 @@
 <!DOCTYPE HTML>
 <html>
 
-    <head>
-        <title>ImieCar</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('arcana/assets/css/main.css') }}" />
-        <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}" />
-    </head>
+<head>
+    <title>ImieCar</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('arcana/assets/css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}"/>
+</head>
 
-    <body>
+<body>
 
-        <div id="header">
-            <nav id="nav">
+<div id="header">
+    <nav id="nav">
+        <ul>
+            <li class="current"><a href="/">Accueil</a></li>
+            <li><a href="#">Trajets</a>
                 <ul>
-                    <li class="current"><a href="/">Accueil</a></li>
-                    <li><a href="#">Trajets</a>
-                        <ul>
-                            <li><a href="{{ path('trajet_new') }}">Proposer un trajet</a></li>
-                            <li><a href="{{ path('choix_trajet') }}">choisir un trajet</a></li>
-                            <li><a href="{{ path('trajet_index') }}"> liste des trajets</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="">Consulter</a></li>
-                    <li><a href="">Carte</a></li>
-                    <li><a href="{{ path('contact_index') }}">Contact</a></li>
-                    <li><a href="{{ path('contact_new') }}">Contact en test</a></li>
-                    <li><a href="#">Compte</a>
-                        <ul>
-                            <li><a href="/logout">Déconnexion</a></li>
-                            <li><a href="/admin">Gestion du site</a></li>
-                        </ul>
-                    </li>
-                    <li class="current"><a style="text-align: right"  href="#">Bonjour  {{ app.user.firstname }} {{ app.user.lastname }}</a></li>
+                    <li><a href="{{ path('trajet_index') }}"> liste des trajets</a></li>
+                    <li><a href="{{ path('trajet_new') }}">Proposer un trajet</a></li>
                 </ul>
-            </nav>
-        </div>
-           {#{% block body %}{% endblock %}#}
-        <div id="page">{% block body %}<div id="slogan" style="padding-bottom: 140px">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez librement<br><br><br><br><br><br>Sans commission</div>{% endblock %}</div>
-        <div class="trou2"></div>
-            <footer id="footer" class="col-sm-12">
-
-                <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                    <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+            </li>
+            <li><a href="">Consulter</a></li>
+            <li><a href="">Carte</a></li>
+            <li><a href="{{ path('contact_index') }}">Contact</a></li>
+            <li><a href="{{ path('contact_new') }}">Contact en test</a></li>
+            <li><a href="#">Compte</a>
+                <ul>
+                    <li><a href="/logout">Déconnexion</a></li>
+                    <li><a href="/admin">Gestion du site</a></li>
                 </ul>
+            </li>
+            <li class="current"><a style="text-align: right"
+                                   href="#">Bonjour {{ app.user.firstname }} {{ app.user.lastname }}</a></li>
+        </ul>
+    </nav>
+</div>
+{#{% block body %}{% endblock %}#}
+<div id="page">{% block body %}
+        <div id="slogan" style="padding-bottom: 140px">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez
+            librement<br><br><br><br><br><br>Sans commission
+        </div>{% endblock %}</div>
+<div class="trou2"></div>
+<footer id="footer" class="col-sm-12">
 
-                <!-- Copyright -->
-                <div class="copyright">
-                    <ul class="menu">
-                        <li>&copy; Imiecar. All rights reserved</li>
-                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                        <li><a>Team: Amel Vincent Christopher</a></li>
-                    </ul>
-                </div>
+    <ul class="icons">
+        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+    </ul>
 
-            </footer>
+    <!-- Copyright -->
+    <div class="copyright">
+        <ul class="menu">
+            <li>&copy; Imiecar. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li><a>Team: Amel Vincent Christopher</a></li>
+        </ul>
+    </div>
 
-        <div class="trou2"> </div>
+</footer>
 
-        <!-- Scripts -->
-        <script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
-        <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('arcana/assets/js/jquery.dropotron.min.js') }}"></script>
-        <script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
-        <script src="{{ asset('arcana/assets/js/util.js') }}"></script>
-        <script src="{{ asset('arcana/assets/js/main.js') }}"></script>
-    </body>
+<div class="trou2"></div>
+
+<!-- Scripts -->
+<script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
+<script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('arcana/assets/js/jquery.dropotron.min.js') }}"></script>
+<script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
+<script src="{{ asset('arcana/assets/js/util.js') }}"></script>
+<script src="{{ asset('arcana/assets/js/main.js') }}"></script>
+</body>
 </html>

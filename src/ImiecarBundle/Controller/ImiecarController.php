@@ -12,7 +12,7 @@ class ImiecarController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('::base.html.twig');
+        return $this->render('base.html.twig');
     }
 
 //     /**
