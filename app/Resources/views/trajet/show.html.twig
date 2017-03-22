@@ -1,64 +1,85 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Trajet</h1>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <div class="container">
+        <div class="row">
+            <div style="margin-bottom: 25px" id="trajet" class="col-sm-12">
+                <div id="entete"><h1><strong>Détail du trajet</strong></h1></div>
+            </div>
+            <div id="trajet" class="col-sm-12">
+                <div id="entete"><h1><strong></strong></h1></div>
+                <div class="row">
+                    <div style=" color:white;text-align: center; " class="col-sm-12">
+                        <div class="trou"></div>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ trajet.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Ville de depart</th>
-                <td>{{ trajet.villeDepart }}</td>
-            </tr>
-            <tr>
-                <th>Heure de depart</th>
-                <td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Ville intermediaire</th>
-                <td>{{ trajet.villeIntermediaire }}</td>
-            </tr>
-            <tr>
-                <th>Heure intermediaire</th>
-                <td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Ville d'arrivée</th>
-                <td>{{ trajet.villeArrivee }}</td>
-            </tr>
-            <tr>
-                <th>Heure d'arrivée</th>
-                <td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Nombre de places</th>
-                <td>{{ trajet.nbPlaces }}</td>
-            </tr>
-            <tr>
-                <th>Id de l'utilisateur</th>
-                <td>{{ trajet.idUtilisateur.id }}</td>
-            </tr>
-        </tbody>
-    </table>
+                        <div class="row fondtrajet2 col-sm-12">
+                            <div style="text-align: left" class="col-sm-4">
+                                <p>Trajet à partir du :
+                                    <strong><span>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</span></strong>
+                                </p>
+                            </div>
+                            <div style="text-align: center" class="col-sm-4">
 
-    <ul>
-        <li>
-            <a href="{{ path('trajet_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('trajet_edit', { 'id': trajet.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                            </div>
+                            <div style="text-align: right" class="col-sm-4">
+                                <P>Ville de départ : <strong><span>{{ trajet.villeDepart }}</span></strong></P>
+                            </div>
+                        </div>
+
+                        <div class="row fondtrajet col-sm-12">
+                            <div style="text-align: center" class="col-sm-2">
+                                <p>Heure de départ :</p>
+                                <span>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</span>
+                            </div>
+
+                            <div style="text-align: center" class="col-sm-3">
+                                <p>Ville intermediaire</p>
+                                <span>{{ trajet.villeIntermediaire }}</span>
+                            </div>
+
+                            <div style="text-align: center" class="col-sm-3">
+                                <p>Heure intermediaire </p>
+                                <span>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</span>
+                            </div>
+
+                            <div style="text-align: center" class="col-sm-2">
+                                <p>Nombre de place(s)</p>
+                                <span>{{ trajet.nbPlaces }}</span>
+                            </div>
+
+                            <div style="text-align: center" class="col-sm-2">
+                                <p>Conducteur</p>
+                                <span>{{ trajet.idUtilisateur }}</span>
+                            </div>
+
+                        </div>
+
+                        <div class="row col-sm-12">
+                            <div class="col-sm-12">
+                                <br>
+                                <div style="text-align: left" class="col-sm-4">
+                                    <button class="btn-button-left"
+                                            onclick="location.href= '{{ path('trajet_index') }}' ">{{ 'Retour à la liste' }}</button>
+                                </div>
+
+                                <div style="text-align: center" class="col-sm-4">
+                                    {{ form_start(delete_form) }}
+                                    <button class="btn-button-center" type="submit"
+                                            value="Delete">{{ 'Effacer' }}</button>
+                                    {{ form_end(delete_form) }}
+                                </div>
+
+                                <div style="text-align: right" class="col-sm-4">
+                                    <button class="btn-button-right"
+                                            onclick="location.href= '{{ path('trajet_edit', { 'id': trajet.id }) }}' ">{{ 'Modifier' }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
 {% endblock %}
