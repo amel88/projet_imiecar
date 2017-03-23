@@ -1,16 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {#<h1>Veuillez saisir votre message : </h1>#}
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+<div class="container">
+    <div class="row">
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Envoyer" />
-    {{ form_end(form) }}
+        <div style="margin-bottom: 25px" id="trajet" class="col-sm-12">
+            <div id="entete"><h1><strong>Nous contacter</strong></h1></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style="margin: 0" id="trajet" class="col-sm-12">
+            {{ form_start(form, {'method': 'POST', 'action': path('contact_new')}) }}
+            <div class="col-sm-12">
+
+                {{ form_label(form.message ,'Message ',{'label_attr':{'style': 'color:#ade220;padding:40px 5px 0px 45px'}}) }}
+                {{ form_widget(form.message,{'attr':{'style': 'padding:10px ; color:#fff; margin:0px 10px 10px 25px; height:150px; Width: 95%'}}) }}
+                <div style="text-align: right; margin: 0 50px 0 0">
+                    <input type="submit" value="Envoyer"/>
+                </div>
+            {{ form_end(form) }}
+        </div>
+        </div>
+    </div>
+</div>
 
     {#<ul>#}
         {#<li>#}
             {#<a href="{{ path('contact_index') }}">Back to the list</a>#}
         {#</li>#}
     {#</ul>#}
+
 {% endblock %}
