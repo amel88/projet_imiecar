@@ -13,7 +13,9 @@ class ContactType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('message');
+        $builder
+            ->add('message','Symfony\Component\Form\Extension\Core\Type\TextareaType')
+        ;
     }
     
     /**
