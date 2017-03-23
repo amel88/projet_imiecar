@@ -2,7 +2,9 @@
 
 namespace ImiecarBundle\Controller;
 
+use FOS\UserBundle\Model\User;
 use ImiecarBundle\Entity\Contact;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -47,20 +49,28 @@ class ContactController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
-            $em->flush($contact);
+            $em->flush();
             //  ajout
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('Hello World')
+                ->setSubject(
+
+                 'User', EntityType::class, array(
+                    "class" => User::class,
+                    "choice_label" => 'firstname'))
+
+
                 ->setFrom('christopher.jacquot@gmail.com')
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody(
+
                     $this->renderView(
 
                         ':contact:show.html.twig'
                     ),
                     'text/html'
                 );
+
             $this->get('mailer')->send($message);
 
              //  fin  de l'ajout
