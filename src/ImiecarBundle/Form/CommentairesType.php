@@ -2,7 +2,9 @@
 
 namespace ImiecarBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +15,15 @@ class CommentairesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('text');
+        $builder->add('date',DateTimeType::class,array(
+            'label'=>'date',
+            'format'=> 'dd:MM:yyyy',
+            'input'=>'datetime',
+            'data'=> new \DateTime('now')
+
+
+        ))
+            ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType');
     }
     
     /**

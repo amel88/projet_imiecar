@@ -53,21 +53,24 @@ class ContactController extends Controller
             //  ajout
 
             $message = \Swift_Message::newInstance()
-                ->setSubject(
+                ->setSubject($this->getUser()->getUsername()
 
-                 'User', EntityType::class, array(
-                    "class" => User::class,
-                    "choice_label" => 'firstname'))
+//                 'User', EntityType::class, array(
+//                    "class" => User::class,
+//                    "choice_label" => 'firstname')
+                )
 
 
-                ->setFrom('christopher.jacquot@gmail.com')
+                ->setFrom($this->getUser()->getEmail())
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody(
+                    $contact->getMessage(),
+                
+//                    $this->renderView(
+//
+//                        ':contact:show.html.twig'
+//                    ),
 
-                    $this->renderView(
-
-                        ':contact:show.html.twig'
-                    ),
                     'text/html'
                 );
 

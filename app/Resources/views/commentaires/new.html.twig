@@ -1,16 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Ajouter un commentaire : </h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Ajouter" />
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+<div class="container">
+    <div class="row">
+
+        <div style="margin-bottom: 25px" id="trajet" class="col-sm-12">
+            <div id="entete"><h1><strong>Commentaire :</strong></h1></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style="margin: 0" id="trajet" class="col-sm-12">
+            {{ form_start(form, {'method': 'POST', 'action': path('contact_new')}) }}
+            <div class="col-sm-12">
+
+            {{ form_start(form) }}
+
+        {{ form_widget(form.date,{'attr':{'style':'visibility:hidden'}}) }}
+                {{ form_widget(form.text,{'attr':{'style': 'padding:10px ; color:#fff; margin:0px 10px 10px 25px; height:150px; Width: 95%'}}) }}
+
+                <input type="submit" value="Envoyer" />
     {{ form_end(form) }}
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
 
     <ul>
         <li>
-            <a href="{{ path('commentaires_index') }}">Back to the list</a>
+            <a href="{{ path('commentaires_new') }}">Back to the list</a>
         </li>
     </ul>
 {% endblock %}
