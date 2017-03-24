@@ -63,9 +63,8 @@ class ContactController extends Controller
 
                 ->setFrom($this->getUser()->getEmail())
                 ->setTo('christopher.jacquot@gmail.com')
-                ->setBody(
-                    $contact->getMessage(),
-                
+                ->setBody($contact->getMessage(),
+
 //                    $this->renderView(
 //
 //                        ':contact:show.html.twig'
