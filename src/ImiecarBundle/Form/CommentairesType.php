@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use UserBundle\Entity\User;
 
 class CommentairesType extends AbstractType
 {
@@ -24,6 +25,9 @@ class CommentairesType extends AbstractType
 
         ))
             ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType');
+
+
+
     }
     
     /**

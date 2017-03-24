@@ -16,8 +16,10 @@
         {% for commentaire in commentaires %}
             <tr>
                 {#<td><a href="{{ path('commentaires_show', { 'id': commentaire.id }) }}">{{ commentaire.id }}</a></td>#}
+
                 <td>{% if commentaire.date %}{{ commentaire.date|date('d-m-Y H:i') }}{% endif %}</td>
                 <td>{{ commentaire.text }}</td>
+                <td>{{ commentaire.username }}</td>
                 <td>
                     <ul>
                         <li>
