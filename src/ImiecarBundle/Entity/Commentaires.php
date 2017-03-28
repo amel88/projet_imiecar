@@ -93,5 +93,28 @@ class Commentaires
     {
         return $this->text;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", fetch="EAGER")
+     */
+    private $username;
+
+    /**
+     * @return \UserBundle\Entity\User
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param \UserBundle\Entity\User $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+
 }
 
