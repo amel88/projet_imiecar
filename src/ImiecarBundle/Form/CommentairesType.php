@@ -32,8 +32,8 @@ class CommentairesType extends AbstractType
 
 
             ->add('username',EntityType::class,array(
-                'class'=>'UserBundle\Entity\User',
-                'choice_label'=>'username'
+                'class'=>'UserBundle\Entity\User'
+
             ))
         ;
 

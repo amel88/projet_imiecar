@@ -6,6 +6,7 @@ use ImiecarBundle\Entity\Commentaires;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use UserBundle\Entity\User;
 
 /**
  * Commentaire controller.
@@ -44,6 +45,7 @@ class CommentairesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $trajet->setIdUtilisateur($this->get('security.token_storage')->getToken()->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaires);
             $em->flush($commentaires);
