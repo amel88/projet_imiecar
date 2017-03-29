@@ -30,19 +30,19 @@ class Trajet
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
+     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ville")
      */
     private $villeDepart;
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
+     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
      */
     private $villeIntermediaire;
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
+     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
      */
     private $villeArrivee;
 
