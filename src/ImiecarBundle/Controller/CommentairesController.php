@@ -6,6 +6,7 @@ use ImiecarBundle\Entity\Commentaires;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use UserBundle\Entity\User;
 
 /**
  * Commentaire controller.
@@ -39,11 +40,13 @@ class CommentairesController extends Controller
      */
     public function newAction(Request $request)
     {
+
         $commentaires = new Commentaires();
         $form = $this->createForm('ImiecarBundle\Form\CommentairesType', $commentaires);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $this->getUser();
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaires);
             $em->flush($commentaires);
