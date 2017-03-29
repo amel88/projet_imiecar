@@ -29,23 +29,20 @@ class Trajet
     private $date;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="ville_depart", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
      */
     private $villeDepart;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="ville_intermediaire", type="string", length=255, nullable=true)
+     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
      */
     private $villeIntermediaire;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="ville_arrivee", type="string", length=255)
+     * @ORM\OneToMany(targetEntity="Ville", mappedBy="ville")
      */
     private $villeArrivee;
 
@@ -119,24 +116,11 @@ class Trajet
         return $this->date;
     }
 
-    /**
-     * Set villeDepart
-     *
-     * @param string $villeDepart
-     *
-     * @return Trajet
-     */
-    public function setVilleDepart($villeDepart)
-    {
-        $this->villeDepart = $villeDepart;
-
-        return $this;
-    }
 
     /**
      * Get villeDepart
      *
-     * @return string
+     * @return \ImiecarBundle\Entity\Ville
      */
     public function getVilleDepart()
     {
@@ -144,47 +128,20 @@ class Trajet
     }
 
     /**
-     * Set villeIntermediaire
-     *
-     * @param string $villeIntermediaire
-     *
-     * @return Trajet
-     */
-    public function setVilleIntermediaire($villeIntermediaire)
-    {
-        $this->villeIntermediaire = $villeIntermediaire;
-
-        return $this;
-    }
-
-    /**
      * Get villeIntermediaire
      *
-     * @return string
+     * @return \ImiecarBundle\Entity\Ville
      */
     public function getVilleIntermediaire()
     {
         return $this->villeIntermediaire;
     }
 
-    /**
-     * Set villeArrivee
-     *
-     * @param string $villeArrivee
-     *
-     * @return Trajet
-     */
-    public function setVilleArrivee($villeArrivee)
-    {
-        $this->villeArrivee = $villeArrivee;
-
-        return $this;
-    }
 
     /**
      * Get villeArrivee
      *
-     * @return string
+     * @return \ImiecarBundle\Entity\Ville
      */
     public function getVilleArrivee()
     {
