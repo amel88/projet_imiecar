@@ -100,7 +100,7 @@ class Commentaires
     private $username;
 
     /**
-     * @return \UserBundle\Entity\User
+     * @return string
      */
     public function getUsername()
     {
