@@ -50,32 +50,17 @@ class ContactController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
-            //  ajout
 
             $message = \Swift_Message::newInstance()
-                ->setSubject($this->getUser()->getUsername()
-
-//                 'User', EntityType::class, array(
-//                    "class" => User::class,
-//                    "choice_label" => 'firstname')
-                )
-
-
+                ->setSubject($this->getUser()->getUsername())
                 ->setFrom($this->getUser()->getEmail())
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody($contact->getMessage(),
-
-//                    $this->renderView(
-//
-//                        ':contact:show.html.twig'
-//                    ),
 
                     'text/html'
                 );
 
             $this->get('mailer')->send($message);
-
-             //  fin  de l'ajout
 
             return $this->redirectToRoute('contact_show', array('id' => $contact->getId()));
         }

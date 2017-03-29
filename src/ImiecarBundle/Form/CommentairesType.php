@@ -2,6 +2,7 @@
 
 namespace ImiecarBundle\Form;
 
+use FOS\UserBundle\Tests\TestUser;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -28,10 +29,13 @@ class CommentairesType extends AbstractType
 
         ))
             ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType')
-             ->add('username');
 
 
-//            );
+            ->add('username',EntityType::class,array(
+                'class'=>'UserBundle\Entity\User',
+                'choice_label'=>'username'
+            ))
+        ;
 
 
 
