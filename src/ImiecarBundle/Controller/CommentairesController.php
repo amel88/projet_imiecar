@@ -45,7 +45,7 @@ class CommentairesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $trajet->setIdUtilisateur($this->get('security.token_storage')->getToken()->getUser());
+            $this->getUser();
             $em = $this->getDoctrine()->getManager();
             $em->persist($commentaires);
             $em->flush($commentaires);
