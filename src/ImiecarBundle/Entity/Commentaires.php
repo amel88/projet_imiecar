@@ -3,6 +3,7 @@
 namespace ImiecarBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Entity\User;
 
 /**
  * Commentaires
@@ -93,27 +94,29 @@ class Commentaires
     {
         return $this->text;
     }
-
+    
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", fetch="EAGER")
      */
-    private $username;
+    private $idUsers;
 
     /**
-     * @return string
+     * @return int
      */
-    public function getUsername()
+    public function getIdUsers()
     {
-        return $this->username;
+        return $this->idUsers;
     }
 
     /**
-     * @param \UserBundle\Entity\User $username
+     * @param \UserBundle\Entity\User $idUsers
      */
-    public function setUsername($username)
+    public function setIdUsers($idUsers)
     {
-        $this->username = $username;
+        $this->idUsers = $idUsers;
     }
+
+
 
 
 }

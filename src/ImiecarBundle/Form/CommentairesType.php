@@ -30,11 +30,11 @@ class CommentairesType extends AbstractType
         ))
             ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType')
 
+                 ->add('idUsers')
+//            ->add('username',EntityType::class,array(
+//                'class'=>'UserBundle\Entity\User'))
 
-            ->add('username',EntityType::class,array(
-                'class'=>'UserBundle\Entity\User'
 
-            ))
         ;
 
 
