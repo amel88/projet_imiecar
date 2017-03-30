@@ -2,6 +2,7 @@
 
 namespace ImiecarBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,7 +32,7 @@ class Trajet
     /**
      * @var string
      *
-     * @ORM\Column(name="ville_depart", type="string", length=255)
+     * @ORM\Column(name="ville_depart", type="string", length=255, nullable=false)
      */
     private $villeDepart;
 
@@ -45,7 +46,7 @@ class Trajet
     /**
      * @var string
      *
-     * @ORM\Column(name="ville_arrivee", type="string", length=255)
+     * @ORM\Column(name="ville_arrivee", type="string", length=255, nullable=false)
      */
     private $villeArrivee;
 
@@ -84,7 +85,6 @@ class Trajet
      */
     private $idUtilisateur;
 
-
     /**
      * Get id
      *
@@ -120,22 +120,6 @@ class Trajet
     }
 
     /**
-     * Set villeDepart
-     *
-     * @param string $villeDepart
-     *
-     * @return Trajet
-     */
-    public function setVilleDepart($villeDepart)
-    {
-        $this->villeDepart = $villeDepart;
-
-        return $this;
-    }
-
-    /**
-     * Get villeDepart
-     *
      * @return string
      */
     public function getVilleDepart()
@@ -144,22 +128,14 @@ class Trajet
     }
 
     /**
-     * Set villeIntermediaire
-     *
-     * @param string $villeIntermediaire
-     *
-     * @return Trajet
+     * @param string $villeDepart
      */
-    public function setVilleIntermediaire($villeIntermediaire)
+    public function setVilleDepart($villeDepart)
     {
-        $this->villeIntermediaire = $villeIntermediaire;
-
-        return $this;
+        $this->villeDepart = $villeDepart;
     }
 
     /**
-     * Get villeIntermediaire
-     *
      * @return string
      */
     public function getVilleIntermediaire()
@@ -168,27 +144,27 @@ class Trajet
     }
 
     /**
-     * Set villeArrivee
-     *
-     * @param string $villeArrivee
-     *
-     * @return Trajet
+     * @param string $villeIntermediaire
      */
-    public function setVilleArrivee($villeArrivee)
+    public function setVilleIntermediaire($villeIntermediaire)
     {
-        $this->villeArrivee = $villeArrivee;
-
-        return $this;
+        $this->villeIntermediaire = $villeIntermediaire;
     }
 
     /**
-     * Get villeArrivee
-     *
      * @return string
      */
     public function getVilleArrivee()
     {
         return $this->villeArrivee;
+    }
+
+    /**
+     * @param string $villeArrivee
+     */
+    public function setVilleArrivee($villeArrivee)
+    {
+        $this->villeArrivee = $villeArrivee;
     }
 
     /**
