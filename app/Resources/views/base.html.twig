@@ -30,7 +30,11 @@
                                    href="#">{{ app.user.firstname }} {{ app.user.lastname }}</a>
                 <ul>
                     <li><a href="/logout">Déconnexion</a></li>
+                    <li><a href="/{{ path('fos_user_change_password') }}">Changer mon mot de passe</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="/admin">Gestion du site</a></li>
+                    {% endif %}
+
                 </ul>
             </li>
             {#<li class="current"><a style="text-align: right"#}
@@ -74,5 +78,6 @@
 <script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/util.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/main.js') }}"></script>
+{#<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>#}
 </body>
 </html>
