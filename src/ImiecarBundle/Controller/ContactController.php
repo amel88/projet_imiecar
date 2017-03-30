@@ -53,7 +53,8 @@ class ContactController extends Controller
 
             $message = \Swift_Message::newInstance()
                 ->setSubject($this->getUser()->getUsername())
-                ->setFrom($this->getUser()->getEmail())
+                ->setFrom('christopher.jacquot@gmail.com')
+//                    $this->getUser()->getEmail())
                 ->setTo('christopher.jacquot@gmail.com')
                 ->setBody($contact->getMessage(),
 
