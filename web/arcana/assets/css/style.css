@@ -197,12 +197,22 @@ fieldset[disabled] .btn-validez.active {
     background-color: #555555;
 }
 
+#p{
+    animation-duration: 3s;
+    animation-name: move;
+    animation-iteration-count: infinite;
+
+}
+
 #slogan {
+
     text-align: center;
     color: whitesmoke;
     font-size: 100px;
     padding-top: 10%;
+    
 }
+
 
 span {
     font-size: 20px;
@@ -548,6 +558,9 @@ fieldset[disabled] .btn-center-right.active {
     background-image: none;
 }
 
+
+
+
 /*.btn-center.disabled,*/
 /*.btn-center[disabled],*/
 /*fieldset[disabled] .btn-center,*/
@@ -576,3 +589,7 @@ btn-vert {
     border-top-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+
+
+
+

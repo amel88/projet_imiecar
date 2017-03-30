@@ -25,7 +25,7 @@
             </li>
             {#<li><a href="">Carte</a></li>#}
             <li><a href="{{ path('commentaires_new') }}">Commentaire</a></li>
-            <li><a href="{{ path('contact_index') }}">Contact</a></li>
+            <li><a href="{{ path('contact_new') }}">Contact</a></li>
             <li class="current"><a style="text-align: right"
                                    href="#">{{ app.user.firstname }} {{ app.user.lastname }}</a>
                 <ul>
@@ -44,9 +44,10 @@
 </div>
 {#{% block body %}{% endblock %}#}
 <div id="page">{% block body %}
-        <div id="slogan" style="padding-bottom: 140px">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez
+        <div id="slogan" style="padding-bottom: 140px"><p id="p">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez
             librement<br><br><br><br><br><br>Sans commission
-        </div>{% endblock %}</div>
+        </p></div>
+    {% endblock %}</div>
 <div class="trou2"></div>
 <footer id="footer" class="col-sm-12">
 

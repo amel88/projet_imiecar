@@ -20,8 +20,10 @@
 
         {{ form_widget(form.date,{'attr':{'style':'visibility:hidden'}}) }}
                 {{ form_widget(form.text,{'attr':{'style': 'padding:10px ; color:#fff; margin:0px 10px 10px 25px; height:150px; Width: 95%'}}) }}
-                {{ form_widget(form.username,{'attr':{'style':'visibility:hidden'}}) }}
-                <input type="submit" value="Ajouter" />
+                <div style="text-align: right; margin: 0 50px 0 0">
+                    <input type="submit" value="Ajouter" />
+                </div>
+
     {{ form_end(form) }}
 
 
@@ -34,7 +36,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('commentaires_index') }}">Back to the list</a>
+            <a href="{{ path('commentaires_index') }}">Retour à la liste des commentaires</a>
         </li>
     </ul>
 {% endblock %}

@@ -24,19 +24,11 @@ class CommentairesType extends AbstractType
             'label'=>'date',
             'format'=> 'dd:MM:yyyy',
             'input'=>'datetime',
-            'data'=> new \DateTime('now+1hours')
+            'data'=> new \DateTime( "now+2hours")
 
 
         ))
-            ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType')
-
-                 ->add('idUsers')
-//            ->add('username',EntityType::class,array(
-//                'class'=>'UserBundle\Entity\User'))
-
-
-        ;
-
+            ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType');
 
 
     }
