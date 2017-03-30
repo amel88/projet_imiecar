@@ -29,26 +29,12 @@ class Trajet
      */
     private $date;
 
-//    /**
-//     * @var string
-//     *
-//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ville")
-//     */
-//    private $villeDepart;
-
     /**
      * @var string
      *
-     * @ORM\Column(name="ville_depart", type="string", length=255)
+     * @ORM\Column(name="ville_depart", type="string", length=255, nullable=false)
      */
     private $villeDepart;
-
-//    /**
-//     * @var string
-//     *
-//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
-//     */
-//    private $villeIntermediaire;
 
     /**
      * @var string
@@ -57,17 +43,10 @@ class Trajet
      */
     private $villeIntermediaire;
 
-//    /**
-//     * @var string
-//     *
-//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
-//     */
-//    private $villeArrivee;
-
     /**
      * @var string
      *
-     * @ORM\Column(name="ville_arrivee", type="string", length=255)
+     * @ORM\Column(name="ville_arrivee", type="string", length=255, nullable=false)
      */
     private $villeArrivee;
 
@@ -105,13 +84,6 @@ class Trajet
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", fetch="EAGER")
      */
     private $idUtilisateur;
-
-//    public function __construct()
-//    {
-//        $this->villeDepart = new \Doctrine\Common\Collections\ArrayCollection();
-//        $this->villeArrivee = new \Doctrine\Common\Collections\ArrayCollection();
-//        $this->villeIntermediaire = new \Doctrine\Common\Collections\ArrayCollection();
-//    }
 
     /**
      * Get id
@@ -194,41 +166,6 @@ class Trajet
     {
         $this->villeArrivee = $villeArrivee;
     }
-
-
-
-
-
-//    /**
-//     * Get villeDepart
-//     *
-//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
-//     */
-//    public function getVilleDepart()
-//    {
-//        return $this->villeDepart;
-//    }
-//
-//    /**
-//     * Get villeIntermediaire
-//     *
-//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
-//     */
-//    public function getVilleIntermediaire()
-//    {
-//        return $this->villeIntermediaire;
-//    }
-//
-//
-//    /**
-//     * Get villeArrivee
-//     *
-//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
-//     */
-//    public function getVilleArrivee()
-//    {
-//        return $this->villeArrivee;
-//    }
 
     /**
      * Set heureDepart
