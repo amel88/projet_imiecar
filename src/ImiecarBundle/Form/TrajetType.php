@@ -27,7 +27,8 @@ class TrajetType extends AbstractType
             ->add('heureDepart')
             ->add('villeIntermediaire', EntityType::class, array(
                 "class" => Ville::class,
-                "choice_label" => 'ville'))
+                "choice_label" => 'ville',
+                'empty_data'  => null))
             ->add('heureIntermediaire')
             ->add('villeArrivee', EntityType::class, array(
                 "class" => Ville::class,

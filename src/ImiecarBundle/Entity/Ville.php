@@ -24,7 +24,7 @@ class Ville
     /**
      * @var string
      *
-     * @ORM\Column(name="ville", type="string", length=255)
+     * @ORM\Column(name="ville", type="string", length=255, nullable=true)
      */
     private $ville;
 
@@ -64,7 +64,12 @@ class Ville
     }
 
     public function __toString() {
-        return $this->ville;
+        if(($this->ville) == null){
+            return " ";
+        }
+        else{
+            return $this->ville;
+        }
     }
 }
 

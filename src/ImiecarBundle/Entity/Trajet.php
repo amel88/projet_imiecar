@@ -53,7 +53,7 @@ class Trajet
     /**
      * @var string
      *
-     * @ORM\Column(name="ville_intermediaire", type="string", length=255)
+     * @ORM\Column(name="ville_intermediaire", type="string", length=255, nullable=true)
      */
     private $villeIntermediaire;
 
