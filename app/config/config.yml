@@ -12,7 +12,7 @@ parameters:
 
 framework:
     #esi: ~
-#    translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -79,13 +79,12 @@ fos_user:
     user_class: UserBundle\Entity\User
     from_email:
         address: christopher.jacquot@gmail.com
-        sender_name: You
+        sender_name: EmieCar
     registration:
         form:
             type: UserBundle\Form\RegistrationType
         confirmation:
             enabled: true
-
     resetting:
         email:
             from_email:
@@ -121,6 +120,18 @@ easy_admin:
             label: 'Trajets'
             list:
             tile: "liste des trajets"
+
+        Commentaires:
+            class: ImiecarBundle\Entity\Commentaires
+            label: 'Commentaires'
+            list:
+            tile: "liste des commentaires"
+
+        Contact:
+            class: ImiecarBundle\Entity\Contact
+            label: 'Contact'
+            list:
+            tile: "liste des messages"
 
         User:
             class: UserBundle\Entity\User
