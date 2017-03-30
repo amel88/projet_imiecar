@@ -2,6 +2,7 @@
 
 namespace ImiecarBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,21 +29,45 @@ class Trajet
      */
     private $date;
 
+//    /**
+//     * @var string
+//     *
+//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ville")
+//     */
+//    private $villeDepart;
+
     /**
+     * @var string
      *
-     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ville")
+     * @ORM\Column(name="ville_depart", type="string", length=255)
      */
     private $villeDepart;
 
+//    /**
+//     * @var string
+//     *
+//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
+//     */
+//    private $villeIntermediaire;
+
     /**
+     * @var string
      *
-     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
+     * @ORM\Column(name="ville_intermediaire", type="string", length=255)
      */
     private $villeIntermediaire;
 
+//    /**
+//     * @var string
+//     *
+//     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
+//     */
+//    private $villeArrivee;
+
     /**
+     * @var string
      *
-     * @ORM\OneToMany(targetEntity="ImiecarBundle\Entity\Ville", mappedBy="ImiecarBundle\Entity\Trajet")
+     * @ORM\Column(name="ville_arrivee", type="string", length=255)
      */
     private $villeArrivee;
 
@@ -81,6 +106,12 @@ class Trajet
      */
     private $idUtilisateur;
 
+//    public function __construct()
+//    {
+//        $this->villeDepart = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->villeArrivee = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->villeIntermediaire = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
 
     /**
      * Get id
@@ -116,11 +147,8 @@ class Trajet
         return $this->date;
     }
 
-
     /**
-     * Get villeDepart
-     *
-     * @return \ImiecarBundle\Entity\Ville
+     * @return string
      */
     public function getVilleDepart()
     {
@@ -128,25 +156,79 @@ class Trajet
     }
 
     /**
-     * Get villeIntermediaire
-     *
-     * @return \ImiecarBundle\Entity\Ville
+     * @param string $villeDepart
+     */
+    public function setVilleDepart($villeDepart)
+    {
+        $this->villeDepart = $villeDepart;
+    }
+
+    /**
+     * @return string
      */
     public function getVilleIntermediaire()
     {
         return $this->villeIntermediaire;
     }
 
+    /**
+     * @param string $villeIntermediaire
+     */
+    public function setVilleIntermediaire($villeIntermediaire)
+    {
+        $this->villeIntermediaire = $villeIntermediaire;
+    }
 
     /**
-     * Get villeArrivee
-     *
-     * @return \ImiecarBundle\Entity\Ville
+     * @return string
      */
     public function getVilleArrivee()
     {
         return $this->villeArrivee;
     }
+
+    /**
+     * @param string $villeArrivee
+     */
+    public function setVilleArrivee($villeArrivee)
+    {
+        $this->villeArrivee = $villeArrivee;
+    }
+
+
+
+
+
+//    /**
+//     * Get villeDepart
+//     *
+//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
+//     */
+//    public function getVilleDepart()
+//    {
+//        return $this->villeDepart;
+//    }
+//
+//    /**
+//     * Get villeIntermediaire
+//     *
+//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
+//     */
+//    public function getVilleIntermediaire()
+//    {
+//        return $this->villeIntermediaire;
+//    }
+//
+//
+//    /**
+//     * Get villeArrivee
+//     *
+//     * @return ArrayCollection|\ImiecarBundle\Entity\Ville[]
+//     */
+//    public function getVilleArrivee()
+//    {
+//        return $this->villeArrivee;
+//    }
 
     /**
      * Set heureDepart
