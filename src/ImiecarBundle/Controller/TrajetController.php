@@ -45,13 +45,20 @@ class TrajetController extends Controller
         $form->handleRequest($request);
 
             $em = $this->getDoctrine()->getManager();
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $trajets = $em->getRepository('ImiecarBundle:Trajet')->findSearch($trajet);
+
 
             return $this->render('choix/index.html.twig', array(
                 'trajets' => $trajets,
                 'form' => $form->createView(),
             ));
+        }
+        $trajets = [];
+        return $this->render('choix/index.html.twig', array(
+            'trajets' => $trajets,
+            'form' => $form->createView(),
+        ));
 
     }
     /**
