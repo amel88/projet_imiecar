@@ -21,14 +21,13 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
             ->orWhere('t.villeIntermediaire = :villeI')
             ->setParameter('villeI', $trajet->getVilleDepart())
             ->andWhere('t.heureDepart >= :heure1')
-            ->setParameter('heure1',$trajet->getHeureDepart())
+            ->setParameter('heure1',$trajet->getHeureDepart()->format("H:i:s"))
             ->orWhere('t.heureIntermediaire >= :heureI')
-            ->setParameter('heureI', $trajet->getHeureDepart())
+            ->setParameter('heureI', $trajet->getHeureDepart()->format("H:i:s"))
             ->andWhere('t.villeArrivee = :ville2')
             ->setParameter('ville2', $trajet->getVilleArrivee())
             ->andWhere('t.heureArrivee <= :heure2')
-            ->setParameter('heure2', $trajet->getHeureArrivee())
-            //->orderBy('p.price', 'ASC')
+            ->setParameter('heure2', $trajet->getHeureArrivee()->format("H:i:s"))
 
             ->getQuery()
             ->execute();

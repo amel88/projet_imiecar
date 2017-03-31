@@ -184,7 +184,7 @@ class Trajet
     /**
      * Get heureDepart
      *
-     * @return \DateTime
+     * @return \DateTime::createFromFormat("H:i:s")
      */
     public function getHeureDepart()
     {
@@ -194,7 +194,7 @@ class Trajet
     /**
      * Set heureIntermediaire
      *
-     * @param string $heureIntermediaire
+     * @param \DateTime $heureIntermediaire
      *
      * @return Trajet
      */
@@ -208,7 +208,7 @@ class Trajet
     /**
      * Get heureIntermediaire
      *
-     * @return string
+     * @return \DateTime::createFromFormat("H:i:s")
      */
     public function getHeureIntermediaire()
     {
@@ -232,7 +232,7 @@ class Trajet
     /**
      * Get heureArrivee
      *
-     * @return \DateTime
+     * @return \DateTime::createFromFormat("H:i:s")
      */
     public function getHeureArrivee()
     {
