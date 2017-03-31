@@ -32,6 +32,7 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->execute();
     }
+
     public function findRequest(Trajet $trajet)
     {
         return $this
