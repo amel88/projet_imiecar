@@ -88,7 +88,7 @@ fos_user:
     resetting:
         email:
             from_email:
-                address:        resetting@example.com
+                address:        christopher.jacquot@gmail.com
                 sender_name:    Demo Resetting
 
 #fos_rest:
