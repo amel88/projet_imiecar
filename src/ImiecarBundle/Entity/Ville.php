@@ -63,12 +63,15 @@ class Ville
         return $this->ville;
     }
 
+    /**
+     * return ville
+     */
     public function __toString() {
         if(($this->ville) == null){
             return " ";
         }
         else{
-            return $this->ville;
+            return $this->getVille();
         }
     }
 }

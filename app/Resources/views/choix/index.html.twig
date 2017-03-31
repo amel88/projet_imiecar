@@ -2,11 +2,14 @@
 {% form_theme form "bootstrap_3_layout.html.twig" %}
 
 {% block body %}
+
+
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 <div class="container">
     <div class="row">
         <div id="trajet" class="col-sm-12">
-            {{ form_start(form, {'method': 'POST', 'action': path('trajet_new')}) }}
+            {{ form_start(form, {'method': 'POST', 'action': path('choix_trajet')}) }}
+            {{ form_start(form) }}
             <div style="padding-top:5px" id="entete" class="col-sm-12">
                 <h1><strong>Trouvez un trajet</strong></h1>
 
@@ -28,7 +31,7 @@
 
                         <div style="text-align: center" class="col-sm-3">
                             {{ form_label(form.heureArrivee,'Heure arr.',{'label_attr':{'style': 'color:#ade220'}}) }}
-                            {{ form_widget(form.heureArrivee) }}
+                            {{ form_widget(form.heureArrivee ) }}
                             {{ form_label(form.villeArrivee, 'Ville de arrivée', {'label_attr':{'style': 'color:#ade220'}}) }}
                             {{ form_widget(form.villeArrivee,{ 'attr': { 'placeholder': 'Ville de arrivée'} }) }}
                         </div>
@@ -36,7 +39,8 @@
                         <div style="margin-top: 20px" class="col-sm-3">
                             <button style="height:80px; width: 180px; border-top-left-radius:15px;
                              border-bottom-right-radius: 15px" type="submit" name="_submit"
-                             class="button center-block">{{ 'Recherche' }}</button>
+                             class="button center-block" onclick="location.href= '{{ path('choix_trajet') }}'">{{ 'Recherche' }}</button>
+
                         </div>
                     </div>
                 </div>
@@ -44,56 +48,58 @@
         </div>
     </div>
 </div>
-    {#<h1>Trajets list</h1>#}
 
-    {#<table id="table">#}
-        {#<thead>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<th>Date</th>#}
-                {#<th>Ville de depart</th>#}
-                {#<th>Heure de depart</th>#}
-                {#<th>Ville intermediaire</th>#}
-                {#<th>Heure intermediaire</th>#}
-                {#<th>Ville d'arrivée</th>#}
-                {#<th>Heure d'arrivée</th>#}
-                {#<th>Nombre de places</th>#}
-                {#<th>Id de l'utilisateur</th>#}
-                {#<th>Actions</th>#}
-            {#</tr>#}
-        {#</thead>#}
-        {#<tbody>#}
-        {#{% for trajet in trajets %}#}
-            {#<tr>#}
-                {#<td><a href="{{ path('trajet_show', { 'id': trajet.id }) }}">{{ trajet.id }}</a></td>#}
-                {#<td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeDepart }}</td>#}
-                {#<td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeIntermediaire }}</td>#}
-                {#<td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeArrivee }}</td>#}
-                {#<td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.nbPlaces }}</td>#}
-                {#<td>{{ trajet.idUtilisateur }}</td>#}
-                {#<td>#}
-                    {#<ul>#}
+    <h1>Trajets list</h1>
 
-                        {#<li>#}
-                            {#<a href="{{ path('choix_show', { 'id': trajet.id }) }}">choisir</a>#}
-                        {#</li>#}
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Ville de depart</th>
+                <th>Heure de depart</th>
+                <th>Ville intermediaire</th>
+                <th>Heure intermediaire</th>
+                <th>Ville d'arrivée</th>
+                <th>Heure d'arrivée</th>
+                <th>Nombre de places</th>
+                <th>Id de l'utilisateur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trajet in trajets %}
+            <tr>
+                <td><a href="{{ path('trajet_show', { 'id': trajet.id }) }}">{{ trajet.id }}</a></td>
+                <td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ trajet.villeDepart }}</td>
+                <td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.villeIntermediaire }}</td>
+                <td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.villeArrivee }}</td>
+                <td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>
+                <td>{{ trajet.nbPlaces }}</td>
+                <td>{{ trajet.idUtilisateur }}</td>
+                <td>
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('choix_show', { 'id': trajet.id }) }}">choisir</a>
+                        </li>
 
 
-                    {#</ul>#}
-                {#</td>#}
-            {#</tr>#}
-        {#{% endfor %}#}
-        {#</tbody>#}
-    {#</table>#}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('choix_trajet') }}">Choisir un nouveau trajet</a>#}
-        {#</li>#}
-    {#</ul>#}
-{#</div>#}
+    <ul>
+        <li>
+            <a href="{{ path('choix_trajet') }}">Choisir un nouveau trajet</a>
+        </li>
+    </ul>
+</div>
 {% endblock %}
+
