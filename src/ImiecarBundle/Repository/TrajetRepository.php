@@ -32,4 +32,15 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->execute();
     }
+    public function findRequest(Trajet $trajet)
+    {
+        return $this
+            ->createQueryBuilder('t')
+            ->update($this->getEntityName(), 't')
+            ->set('t.nbPlaces', $trajet->getNbPlaces() - 1)
+            ->where('t.id = :id')->setParameter('id', $trajet->getId())
+            ->getQuery()
+            ->execute();
+    }
+
 }
