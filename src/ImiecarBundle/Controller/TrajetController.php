@@ -67,7 +67,8 @@ class TrajetController extends Controller
      * @Route("/choisir/{id}", name="choix_show")
      * @Method("GET")
      */
-    public function showAction1(Trajet $trajet)
+
+   public function showAction1(Request $request,Trajet $trajet)
     {
         $deleteForm = $this->createDeleteForm($trajet);
 
@@ -77,7 +78,31 @@ class TrajetController extends Controller
         ));
     }
 
+    /**
+     * Finds and displays a trajet entity.
+     *
+     * @Route("/choisir/miseajour/{id}", name="choix_miseajour")
+     * @Method("GET")
+     */
 
+    public function choixAJour( Trajet $trajet)
+    {
+
+        dump($trajet);
+
+       $deleteForm = $this->createDeleteForm($trajet);
+        $em = $this->getDoctrine()->getManager();
+
+            $trajet->setNbPlaces($trajet->getNbPlaces()-1);
+            $em->flush();
+
+        return $this->render('choix/validation.html.twig', array(
+            'trajet' => $trajet,
+            'delete_form' => $deleteForm->createView(),
+
+        ));
+
+    }
 
     /**
      * Creates a new trajet entity.
