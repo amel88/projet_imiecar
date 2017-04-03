@@ -55,6 +55,18 @@
 
                         </div>
 
+                        <div class="row fondtrajet2 col-sm-12">
+                            <div style="text-align: left" class="col-sm-6">
+                                <p>Arrivée à  :
+                                    <strong><span>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</span></strong>
+                                </p>
+                            </div>
+
+                            <div style="text-align: right" class="col-sm-6">
+                                <P>Ville d'arrivée : <strong><span>{{ trajet.villeArrivee }}</span></strong></P>
+                            </div>
+                        </div>
+
                         <div class="row col-sm-12">
                             <div class="col-sm-12">
                                 <br>

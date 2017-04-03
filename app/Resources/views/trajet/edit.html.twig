@@ -1,21 +1,88 @@
 {% extends 'base.html.twig' %}
-
+{% form_theme edit_form "bootstrap_3_layout.html.twig" %}
 {% block body %}
-    <h1>Trajet edit</h1>
+    {#<h1>Trajet edit</h1>#}
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    {#{{ form_start(edit_form) }}#}
+        {#{{ form_widget(edit_form) }}#}
+        {#<input type="submit" value="Edit" />#}
+    {#{{ form_end(edit_form) }}#}
 
-    <ul>
-        <li>
-            <a href="{{ path('trajet_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('trajet_index') }}">Back to the list</a>#}
+        {#</li>#}
+        {#<li>#}
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Delete">#}
+            {#{{ form_end(delete_form) }}#}
+        {#</li>#}
+    {#</ul>#}
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    {#<link rel="stylesheet" href="{{ asset('css/tuto.css') }}" />#}
+
+    <div  class="container">
+        <div class="row">
+            <div class="col-lg-offset-3 col-sm-6 "id="trajet">
+                <div  class="col-sm-12">
+                    {{ form_start(edit_form, {'method': 'POST', 'action': path('trajet_index')}) }}
+                    <div id="entete"> <h1><strong>modifier trajet</strong></h1></div>
+                    <div class="row">
+                        <div style="text-align: center; " class="col-sm-12"><div class="trou2"> </div>
+                            {{ form_label(edit_form.date, 'Date du trajet', {'label_attr':{'style':'color:#ade220'}}) }}
+                            {{ form_widget(edit_form.date) }}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4"></div>
+                    <div style="text-align: center;padding-top: 1px" class="col-sm-4">
+                        {{ form_label(edit_form.nbPlaces,'Nb place',{'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.nbPlaces,{ 'attr': { 'value': '1','class':'col-sm-2'}}) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div style="text-align: center;padding-top: 20px" class="col-sm-5">
+                        {{ form_label(edit_form.heureDepart,'Heure dép.',{'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.heureDepart) }}
+                        {{ form_label(edit_form.villeDepart, 'Ville de départ', {'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.villeDepart,{ 'attr': { 'placeholder': 'Ville de départ'} }) }}
+                    </div>
+
+                    <div style="text-align: center;padding-top: 20px" class="col-sm-5">
+                        {{ form_label(edit_form.heureArrivee,'Heure arr.',{'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.heureArrivee) }}
+                        {{ form_label(edit_form.villeArrivee, 'Ville de arrivée', {'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.villeArrivee,{ 'attr': { 'placeholder': 'Ville de arrivée'} }) }}
+                    </div>
+                </div>
+                <div class="troutop"> </div>
+                <div style="text-align: center; padding: 0px " class="col-sm-12">
+                    <input style="border-top-left-radius:15px; border-bottom-right-radius: 15px" type="button" value="Ajouter une ville intermediaire" onclick="afficherSuite('suite')">
+                    <div id="suite" style="display: none" class="col-sm-12">
+                        {{ form_label(edit_form.villeIntermediaire ,'Ville ',{'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.villeIntermediaire) }}
+                        {{ form_label(edit_form.heureIntermediaire,'Heure de passage ',{'label_attr':{'style': 'color:#ade220'}}) }}
+                        {{ form_widget(edit_form.heureIntermediaire) }}
+                        <div class="trou"> </div>
+                    </div>
+
+                    <div class="troubottom"> </div>
+                </div>
+                <div style="text-align: center; padding: 0px " class="col-sm-12">
+                    <div>
+                        <button style="border-top-left-radius:15px; border-bottom-right-radius: 15px" type="submit" name="_submit" class="button">{{ 'Modifier' }}</button>
+                    </div>
+                </div>
+                {{ form_end(edit_form) }}
+                <script type="text/javascript">
+                    function afficherSuite(id) {
+                        document.getElementById(id).style.display = 'block';
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    </div>
 {% endblock %}
