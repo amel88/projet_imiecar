@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/main.css') }}"/>
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('arcana/assets/css/animate.css') }}">
+    <style type="text/css"></style>
 </head>
 
 <body>
@@ -43,11 +45,15 @@
     </nav>
 </div>
 {#{% block body %}{% endblock %}#}
-<div id="page">{% block body %}
-        <div id="slogan" style="padding-bottom: 140px"><p id="p">Le covoiturage solidaire<br><br><br><br><br><br>Covoiturez
-            librement<br><br><br><br><br><br>Sans commission
-        </p></div>
-    {% endblock %}</div>
+
+    {% block body %}
+<div id="slogan" style="padding-bottom: 140px">
+    {#<p class="item animated zoomIn" style="animation-delay:1s">Le covoiturage solidaire</p>#}
+    {#<p class="item animated zoomIn" style="animation-delay:2s">Covoiturez librement</p>#}
+    {#<p class="item animated zoomIn" style="animation-delay:3s">Sans commission</p>#}
+</div>
+    {% endblock %}
+
 <div class="trou2"></div>
 <footer id="footer" class="col-sm-12">
 
