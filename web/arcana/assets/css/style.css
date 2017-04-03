@@ -27,7 +27,7 @@
 }
 
 body, html {
-    color: white;
+
     background-image: url('/arcana/images/route.jpg');
     background-attachment: fixed;
 }
@@ -204,13 +204,20 @@ fieldset[disabled] .btn-validez.active {
 
 }
 
+
 #slogan {
 
     text-align: center;
-    color: whitesmoke;
     font-size: 100px;
     padding-top: 10%;
+    font-family: "fantasy";
+    color: #befc0b;
+    opacity: 0.9;
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+
     
+
+
 }
 
 
