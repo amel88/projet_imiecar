@@ -38,7 +38,7 @@
 
                         <div style="margin-top: 20px" class="col-sm-3">
                             <button style="height:80px; width: 180px; border-top-left-radius:15px;
-                             border-bottom-right-radius: 15px" type="submit" name="_submit"
+                             border-bottom-right-radius: 15px" type="submit" name="_submit" id="btn"
                              class="button center-block" onclick="location.href= '{{ path('choix_trajet') }}'">{{ 'Recherche' }}</button>
 
                         </div>
@@ -49,18 +49,28 @@
     </div>
 </div>
 
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-    <div class="container">
+    <div class="container" id="container" >
         <div class="row">
 
-            <div style="margin-bottom: 25px" id="trajet" class="col-sm-12">
-                <div id="entete"><h1><strong>Liste des trajets</strong></h1></div>
-            </div>
+            {#{% if trajets|length == 0 %}#}
+            {#<?PHP if ($form->isSubmitted()) {#}
+            {#<div><h1>il n ya pas de trajet qui correspand à votre recherche</h1></div>}?>#}
+            {#{% endif %}#}
 
-            <div style="padding-top: 35px" id="trajet" class="col-sm-12">
+            {% if trajets|length > 0 %}
+
+
+            <div  id="trajet" class="col-sm-12">
+                <div id="entete"><h1><strong>Liste des trajets</strong></h1></div>
+            </div><br>
+
+
+            <div id="trajet" class="col-sm-12"><br>
                 <div class="row">
                     <div style=" color:white;text-align: center; " class="col-sm-12">
-                        <div class="trou"></div>
+                        <div class="trou"></div><br>
 
                         {% for trajet in trajets %}
                             <div class="row col-sm-12">
@@ -111,6 +121,19 @@
                                 </div>
 
                             </div>
+
+                            <div class="row fondtrajet2 col-sm-12">
+                                <div style="text-align: left" class="col-sm-6">
+                                    <p>Arrivée à  :
+                                        <strong><span>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</span></strong>
+                                    </p>
+                                </div>
+
+                                <div style="text-align: right" class="col-sm-6">
+                                    <P>Ville d'arrivée : <strong><span>{{ trajet.villeArrivee }}</span></strong></P>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <br>
@@ -118,7 +141,7 @@
                             </div>
 
                         {% endfor %}
-                        <div class="row col-sm-12">
+                        <div class="row col-sm-12" >
                             <div class="col-sm-12">
                                 <br>
 
@@ -128,8 +151,15 @@
                 </div>
                 <br><br>
             </div>
+            {% endif %}
         </div>
     </div>
+
+    <script type="text/javascript">
+        function afficher(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
 
 
     {#<h1>Trajets list</h1>#}
