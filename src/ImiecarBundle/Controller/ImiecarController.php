@@ -37,8 +37,8 @@ class ImiecarController extends Controller
             ->setBody(
                 $this->renderView(
                 // app/Resources/views/Emails/registration.html.twig
-                    'base.html.twig',
-                    array('name' =>$name)
+                    'base.html.twig'
+//                    ,array('name' =>$name)
                 ),
                 'text/html'
             )
@@ -58,8 +58,6 @@ class ImiecarController extends Controller
         return $this->render("base.html.twig");
 
     }
-
-
 
 
 }

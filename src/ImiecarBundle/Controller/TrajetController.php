@@ -3,6 +3,7 @@
 namespace ImiecarBundle\Controller;
 
 use ImiecarBundle\Entity\Trajet;
+use function Sodium\add;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -122,8 +123,32 @@ class TrajetController extends Controller
             $em->persist($trajet);
             $em->flush();
 
+            //ajout
+            $message = \Swift_Message::newInstance()
+                ->setSubject('confirmation du trajet')
+                ->setFrom('christopher.jacquot@gmail.com')
+//                    $this->getUser()->getEmail())
+                ->setTo('christopher.jacquot@gmail.com')
+                ->setBody(
+                 ' Bonjour '.
+                 $this->getUser().', votre trajet du '.
+                 $trajet->getDate()->format('d.m.y').' à bien été pris en compte. Il a comme ville de départ : "'.
+                 $trajet->getVilleDepart(). '" , heure de départ : ' .
+                 $trajet->getHeureDepart()->format('h:m') .' arrive à sa destination qui est : "'.
+                 $trajet->getVilleArrivee().'" vers '.
+                 $trajet->getHeureArrivee()->format('h:m').' .'
+                );
+
+
+            $this->get('mailer')->send($message);
+
+            //fin ajout
+
             return $this->redirectToRoute('trajet_show', array('id' => $trajet->getId()));
+
+
         }
+
 
         return $this->render('trajet/new.html.twig', array(
             'trajet' => $trajet,
@@ -207,4 +232,6 @@ class TrajetController extends Controller
             ->getForm()
         ;
     }
+
+
 }
