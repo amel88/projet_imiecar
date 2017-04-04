@@ -10,13 +10,13 @@
 </style>
 <div id="top">
     <h1> ImieCar </h1>
-    <h3>Site de co-voiturage des campus IMIE.</h3>
+    <h2>Nouvelle utilisateur</h2>
     <br>
     <div class="container">
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                {{ form_start(form, {'method': 'POST', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {{ form_start(form, {'method': 'POST', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register','style':'padding-bottom 0px'}}) }}
                     {{ form_widget(form.lastname,{ 'attr': { 'placeholder': 'Nom'} }) }}
                     {{ form_widget(form.firstname,{ 'attr': { 'placeholder': 'Prénom'} }) }}
                     {{ form_widget(form.username,{ 'attr': { 'placeholder': 'Nom d\'utilisateur'} }) }}
@@ -26,10 +26,11 @@
                     <hr>
                     {{ form_widget(form.plainPassword.first,{ 'attr': { 'placeholder': 'Mot de passe'} }) }}
                     {{ form_widget(form.plainPassword.second, { 'attr': { 'placeholder': 'Vérification'} }) }}
-                    <div>
-                        <hr>
-                        <button type="submit" class="btn-dark btn btn-md">{{ 'Validez' }}</button>
-                        <button type="button" class="btn-dark btn btn-md"  onClick="location.href='/'">{{ 'Annulez' }}</button>
+                    <div style="margin-top: 30px">
+
+                        {#<hr style="padding-bottom:px">#}
+                        <button type="button" class="btn-warning btn btn-md col-sm-6"  onClick="location.href='/'"><STRONG>Annulez</STRONG></button>
+                        <button type="submit" class="btn-success btn btn-md col-sm-6"><STRONG>Validez</STRONG></button> <br> <br>
                     </div>
                 {{ form_end(form) }}
             </div>
