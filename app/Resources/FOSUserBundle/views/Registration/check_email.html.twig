@@ -4,4 +4,5 @@
 
 {% block fos_user_content %}
     <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+    <button type="button" class="btn-dark btn btn-md"  onClick="location.href='/'">{{ 'Connection' }}</button>
 {% endblock fos_user_content %}
