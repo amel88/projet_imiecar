@@ -31,7 +31,7 @@
                                    href="#">{{ app.user.firstname }} {{ app.user.lastname }}</a>
                 <ul>
                     <li><a href="{{ path('fos_user_profile_show') }}">Détails du profil</a></li>
-                    <li><a href="#">Mes avis</a></li>
+                    <li><a href="{{ path('commentaires_index') }}">Mes avis</a></li>
                     {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="/admin">Gestion du site</a></li>
                     {% endif %}
