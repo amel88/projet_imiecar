@@ -76,15 +76,20 @@
                                 </div>
 
                                 <div style="text-align: center" class="col-sm-4">
-                                    {{ form_start(delete_form) }}
-                                    <button class="btn-button-center" type="submit"
-                                            value="Delete">{{ 'Effacer' }}</button>
-                                    {{ form_end(delete_form) }}
+                                    {% if  app.user.username == trajet.idUtilisateur %}
+                                        {{ form_start(delete_form) }}
+                                        <button class="btn-button-center" type="submit"
+                                                value="Delete">{{ 'Effacer' }}</button>
+                                        {{ form_end(delete_form) }}
+                                    {% endif %}
                                 </div>
 
                                 <div style="text-align: right" class="col-sm-4">
-                                    <button class="btn-button-right"
-                                            onclick="location.href= '{{ path('trajet_edit', { 'id': trajet.id }) }}' ">{{ 'Modifier' }}</button>
+
+                                    {% if  app.user.username == trajet.idUtilisateur %}
+                                        <button class="btn-button-right"
+                                                onclick="location.href= '{{ path('trajet_edit', { 'id': trajet.id }) }}' ">{{ 'Modifier' }}</button>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
