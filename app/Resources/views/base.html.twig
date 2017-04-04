@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/animate.css') }}">
     <style type="text/css"></style>
+
 </head>
 
 <body>
@@ -17,6 +18,7 @@
 <div id="header">
     <nav id="nav">
         <ul>
+           {#<li><img id="logoImie" src="{{ asset('img/logo.png') }}"></li>#}
             <li class="current"><a href="/">Accueil</a></li>
             <li><a href="#">Trajets</a>
                 <ul>
@@ -46,13 +48,15 @@
 </div>
 {#{% block body %}{% endblock %}#}
 
-    {% block body %}
-<div id="slogan" style="padding-bottom: 140px">
+   {% block body %}
+{#<div id="slogan" style="padding-bottom: 140px">#}
     {#<p class="item animated zoomIn" style="animation-delay:1s">Le covoiturage solidaire</p>#}
     {#<p class="item animated zoomIn" style="animation-delay:2s">Covoiturez librement</p>#}
     {#<p class="item animated zoomIn" style="animation-delay:3s">Sans commission</p>#}
-</div>
+{#</div>#}
+
     {% endblock %}
+
 
 <div class="trou2"></div>
 <footer id="footer" class="col-sm-12">
@@ -85,6 +89,10 @@
 <script src="{{ asset('arcana/assets/js/skel.min.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/util.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/main.js') }}"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
+
+
+
+
 </body>
 </html>
