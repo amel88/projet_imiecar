@@ -77,19 +77,26 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: UserBundle\Entity\User
+
     from_email:
         address: christopher.jacquot@gmail.com
         sender_name: EmieCar
+
     registration:
         form:
             type: UserBundle\Form\RegistrationType
         confirmation:
             enabled: true
+
     resetting:
         email:
             from_email:
                 address:        christopher.jacquot@gmail.com
                 sender_name:    Demo Resetting
+
+    profile:
+        form:
+            type: UserBundle\Form\ProfileType
 
 #fos_rest:
 #    format_listener:
