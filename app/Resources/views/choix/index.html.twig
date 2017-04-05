@@ -55,8 +55,8 @@
         <div class="row">
 
             {#{% if trajets|length == 0 %}#}
-            {#<?PHP if ($form->isSubmitted()) {#}
-            {#<div><h1>il n ya pas de trajet qui correspand à votre recherche</h1></div>}?>#}
+                {#if ($form->isSubmitted()) {#}
+            {#<div><h1>il n ya pas de trajet qui correspand à votre recherche</h1></div>}#}
             {#{% endif %}#}
 
             {% if trajets|length > 0 %}
@@ -162,58 +162,6 @@
     </script>
 
 
-    {#<h1>Trajets list</h1>#}
 
-    {#<table id="table">#}
-        {#<thead>#}
-            {#<tr>#}
-                {#<th>Id</th>#}
-                {#<th>Date</th>#}
-                {#<th>Ville de depart</th>#}
-                {#<th>Heure de depart</th>#}
-                {#<th>Ville intermediaire</th>#}
-                {#<th>Heure intermediaire</th>#}
-                {#<th>Ville d'arrivée</th>#}
-                {#<th>Heure d'arrivée</th>#}
-                {#<th>Nombre de places</th>#}
-                {#<th>Id de l'utilisateur</th>#}
-                {#<th>Actions</th>#}
-            {#</tr>#}
-        {#</thead>#}
-        {#<tbody>#}
-        {#{% for trajet in trajets %}#}
-            {#<tr>#}
-                {#<td><a href="{{ path('trajet_show', { 'id': trajet.id }) }}">{{ trajet.id }}</a></td>#}
-                {#<td>{% if trajet.date %}{{ trajet.date|date('d-m-Y') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeDepart }}</td>#}
-                {#<td>{% if trajet.heureDepart %}{{ trajet.heureDepart|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeIntermediaire }}</td>#}
-                {#<td>{% if trajet.heureIntermediaire %}{{ trajet.heureIntermediaire|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.villeArrivee }}</td>#}
-                {#<td>{% if trajet.heureArrivee %}{{ trajet.heureArrivee|date('H:i') }}{% endif %}</td>#}
-                {#<td>{{ trajet.nbPlaces }}</td>#}
-                {#<td>{{ trajet.idUtilisateur }}</td>#}
-                {#<td>#}
-                    {#<ul>#}
-
-                        {#<li>#}
-                            {#<a href="{{ path('choix_show', { 'id': trajet.id }) }}">choisir</a>#}
-                        {#</li>#}
-
-
-                    {#</ul>#}
-                {#</td>#}
-            {#</tr>#}
-        {#{% endfor %}#}
-        {#</tbody>#}
-    {#</table>#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('choix_trajet') }}">Choisir un nouveau trajet</a>#}
-        {#</li>#}
-    {#</ul>#}
-{#</div>#}
-    {##}
 {% endblock %}
 
