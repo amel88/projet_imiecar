@@ -28,7 +28,11 @@ class CommentairesType extends AbstractType
 
 
         ))
-//            ->add('idUsers')
+            //ajout pour test
+
+
+            ->add('idUsers2')
+
             ->add('text','Symfony\Component\Form\Extension\Core\Type\TextareaType');
 
 
