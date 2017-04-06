@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
-
+{% form_theme form "bootstrap_3_layout.html.twig" %}
 
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/easyadmin/stylesheet/bootstrap.min.css') }}" />
 <div class="container">
     <div class="row">
 
@@ -17,12 +17,17 @@
             <div class="col-sm-12">
 
             {{ form_start(form) }}
+                <div style="text-align: center; padding: 0px " class="col-sm-12">
+                    {{ form_label(form.idUsers2,'Veuillez choisir un conducteur ',{'label_attr':{'style': 'color:#ade220'}}) }}
+                    {{ form_widget(form.idUsers2,{ 'attr': { 'placeholder': 'idusers2'} }) }}
+                </div>
 
         {{ form_widget(form.date,{'attr':{'style':'visibility:hidden'}}) }}
-                {{ form_widget(form.text,{'attr':{'style': 'padding:10px ; color:#fff; margin:0px 10px 10px 25px; height:150px; Width: 95%'}}) }}
+                {{ form_widget(form.text,{'attr':{'style': 'padding:10px ; color:#000; margin:0px 10px 10px 25px; height:150px; Width: 95%'}}) }}
                 <div style="text-align: right; margin: 0 50px 0 0">
                     <input type="submit" value="Ajouter" />
                 </div>
+
 
     {{ form_end(form) }}
 
