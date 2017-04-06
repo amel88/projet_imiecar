@@ -1,48 +1,49 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
+<link rel="stylesheet" href="{{ asset('connect/css/style.css') }}">
+
 <style>
-    form {
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        padding: 10px;
-        padding-top: 15px;
-    }
+   form {
+       background-color: rgba(0, 0, 0, 0.7);
+       border-radius: 10px;
+       padding: 10px;
+       /*padding-top: 0px;*/
+   }
 </style>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-            <form class="form-horizontal col-sm-12" id="login-form">
-                <label class="form-group has-feedback has-feedback-left" style="font-size: 30px; color: #000000"><STRONG>Mon compte</STRONG></label>
-                <hr style="border-color: #000000" >
-                    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-                    <p>{{ 'profile.show.lastname'|trans }}: {{ user.lastname }}</p>
-                    <p>{{ 'profile.show.firstname'|trans }}: {{ user.firstname }}</p>
-                    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-                <hr style="border-color: #000000" >
-            </form>
-        </div>
-    </div>
+<div class="container" style="color: #ffb900"><div class="title" style="padding-bottom: 35px">Mon compte</div>
+    <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('connect/js/index.js') }}"></script>
 
+   <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-4">
+           <form class="form-horizontal col-sm-12" id="login-form">
+               <hr style="border-color: #ffb900" >
+                   <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+                   <p>{{ 'profile.show.lastname'|trans }}: {{ user.lastname }}</p>
+                   <p>{{ 'profile.show.firstname'|trans }}: {{ user.firstname }}</p>
+                   <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+               <hr style="border-color: #ffb900" >
+           </form>
+       </div>
+   </div>
 
-<div class="container ">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-
-        <div class="row col-sm-12 center">
-            <button type="button" class="btn-warning btn btn-md col-sm-12 center" style="margin-top: 10px" onClick="location.href='{{ path('fos_user_profile_edit') }}'">Editer</button>
-        </div>
-        <div class="row col-sm-12">
-            <button type="button" class="btn-warning btn btn-md col-sm-12" style="margin-top: 3px"  onClick="location.href='{{ path('fos_user_change_password') }}'">{{ 'Changer mot de passe ' }}</button>
-        </div>
-        <div class="row col-sm-12">
-            <button type="button" class="btn-danger btn btn-md col-sm-12 " style="margin-top: 3px" onClick="location.href='{{ path('fos_user_resetting_request') }}'">{{ 'fermer mon compte'}}</button>
-        </div>
-
-    </div>
-</div>
-        <button type="button" class="btn-dark btn btn-md" style="margin-top: 10px" onClick="location.href='/'">{{ 'Retour' }}</button>
-</div>
-
+   <div class="row" style="padding-top: 10px">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-4">
+           <form class="form-horizontal col-sm-12" id="login-form">
+           <div>
+               <button type="button" class="btn-warning btn btn-md col-sm-12 center" style="margin-top: 10px; color:black" onClick="location.href='{{ path('fos_user_profile_edit') }}'">Editer</button>
+           </div>
+           <div >
+               <button type="button" class="btn-warning btn btn-md col-sm-12" style="margin-top: 3px; color:black"  onClick="location.href='{{ path('fos_user_change_password') }}'">{{ 'Changer mot de passe ' }}</button>
+           </div>
+           <div>
+               <button type="button" class="btn-danger btn btn-md col-sm-12 " style="margin-top: 3px" onClick="location.href='{{ path('fos_user_resetting_request') }}'">{{ 'fermer mon compte'}}</button>
+           </div>
+       <button type="button" class="btn-primary btn btn-md" style="margin-top: 10px" onClick="location.href='/'">{{ 'Retour' }}</button>
+           </form>
+       </div>
+   </div>
 </div>

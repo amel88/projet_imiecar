@@ -10,101 +10,11 @@
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('arcana/assets/css/animate.css') }}">
     <style type="text/css"></style>
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-    <style>
-        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
-        img.bg {
-            min-height: 100%;
-            width: 100%;
-            height: auto;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -2;
-        }
-
-        .blur {
-            height: 250px;
-            width: 60%;
-            margin: -20px auto;
-            z-index: -1;
-            position: relative;
-            filter: blur(10px);
-            -webkit-filter: blur(10px);
-            -moz-filter: blur(10px);
-            -o-filter: blur(10px);
-            -ms-filter: blur(10px);
-            filter: url(#blur);
-            filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='10');
-            overflow: hidden;
-        }
-
-        .blur:after {
-            content: '';
-            height: 100%;
-            width: 100%;
-            background: rgba(255, 255, 255, .2);
-            position: absolute;
-        }
-
-        .widget {
-            border-top: 2px solid #e8ffd5;
-            border-bottom: 2px solid #e8ffd5;
-            height: 200px;
-            width: 40%;
-            overflow: hidden;
-        }
-
-        .center1 {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-
-        /*  NOT REQUIRED  */
-
-        .text {
-            height: 200px;
-            width: 340px;
-        }
-
-        .text h1 {
-            text-align: center;
-            text-shadow: 1px 1px rgba(0, 0, 0, .1);
-            color: #e8ffd5;
-            margin-top: 30px;
-            font-family: 'Lora', serif;
-            font-weight: 700;
-            font-size: 43px;
-        }
-
-        .text p {
-            text-align: center;
-            color: #e8ffd5;
-            text-shadow: 1px 1px rgba(0, 0, 0, .1);
-            margin-top: 0px;
-            font-family: 'Lato', serif;
-            font-weight: 400;
-            font-size: 22px;
-        }
-    </style>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
-
 </head>
 
-<body>
+<body style="background-image: url('/arcana/images/route.jpg')">
 
-<div id="header" style="">
+<div id="header">
     <nav id="nav">
         <ul>
            {#<li><img id="logoImie" src="{{ asset('img/logo.png') }}"></li>#}
@@ -117,7 +27,7 @@
                 </ul>
             </li>
             <li class="current"><a style="text-align: right"
-                                   href="#">{{ app.user.firstname }} {{ app.user.lastname }}</a>
+                href="#">{{ app.user.firstname }} {{ app.user.lastname }}</a>
                 <ul>
                     <li><a href="{{ path('fos_user_profile_show') }}">Détails du profil</a></li>
                     <li><a href="{{ path('commentaires_index') }}">Mes avis</a></li>
@@ -133,16 +43,15 @@
 {#{% block body %}{% endblock %}#}
 
    {% block body %}
-       <div class="widget center1">
-           <div class="text center1">
-               <h1 class="">ImieCar</h1>
-               <p>Site de covoiturage e ligne</p>
+       <div class="widget center">
+           <div class="text center">
+               <h1 class="">Live CSS Blur</h1>
+               <p>Go ahead, resize me.</p>
            </div>
            <div class="blur">
                <img src="arcana/images/route.jpg" class="bg">
            </div>
        </div>
-
 
        <img src="arcana/images/route.jpg" class="bg">
 
@@ -153,12 +62,11 @@
            </filter>
        </svg>
 
-
        <link href='http://fonts.googleapis.com/css?family=Lora:400,700|Lato:400,500' rel='stylesheet' type='text/css'>
     {% endblock %}
 
 
-<footer id="footer" class="col-sm-12" style="position: absolute; margin-bottom: 50px;   border-top: 2px solid #ade220">
+<footer id="footer" class="col-sm-12" style="border-top: 2px solid #ade220">
 
     <ul class="icons">
         <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -179,8 +87,6 @@
 
 </footer>
 
-
-
 <!-- Scripts -->
 <script src="{{ asset('arcana/assets/js/ie/html5shiv.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
@@ -189,9 +95,6 @@
 <script src="{{ asset('arcana/assets/js/util.js') }}"></script>
 <script src="{{ asset('arcana/assets/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
-
-
-
 
 </body>
 </html>

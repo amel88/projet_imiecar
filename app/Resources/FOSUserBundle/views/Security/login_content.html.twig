@@ -3,19 +3,22 @@
 <link rel="stylesheet" href="{{ asset('connect/css/style.css') }}">
 <style>
     form {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.6);
         border-radius: 10px;
         padding: 10px;
         padding-top: 15px;
+        color: #ffc93e;
     }
 </style>
 
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-<div class="container">
-    <div class="title">Welcome to ImieCar!</div>
-    <div class="subtitle"> Projet WEB JMQ DL 2016 : Amel, Christopher et Vincent</div>
+<div class="container" style="color: #ffe200">
+    <div class="title" style="padding-bottom: 35px">Welcome to ImieCar!</div>
+    <div class="subtitle" style="margin-bottom: 0px"><strong><h3>Projet WEB</h3></strong></div>
+    <div class="subtitle"> JMQ-DL 2016</div>
+    <div class="subtitle"><strong> Amel - Christopher - Vincent</strong> </div>
 <script src="{{ asset('arcana/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('connect/js/index.js') }}"></script>
 
@@ -31,7 +34,7 @@
                 {% endif %}
 
                 <div class="form-group">
-                    <label class="form-group has-feedback has-feedback-left "><h4>Votre compte:</h4></label>
+                    <label class="form-group has-feedback has-feedback-left "><h2><strong>Connection</strong></h2></label>
                     <div class="col-sm-12">
                         <input type="text" class="form-control col-sm-10" id="username" name="_username"
                                value="{{ last_username }}"
@@ -64,5 +67,5 @@
             </form>
         </div>
     </div>
-    <h3><strong>Connectez-vous ou créer un compte pour accéder à nos services.</strong></h3>
+        <h3><strong>Connectez-vous ou créer un compte pour accéder à nos services.</strong></h3>
 </div>

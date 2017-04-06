@@ -3,6 +3,16 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
-    <button type="button" class="btn-dark btn btn-md"  onClick="location.href='/'">{{ 'Connection' }}</button>
+
+<div class="container  " style="color: #ffb900; background-color: rgba(0, 0, 0, 0.7); border-radius: 10px; padding: 15px 10px 10px 10px">
+    <div class="title" style="padding-bottom: 15px"><h2>Vérification email</h2></div>
+    <div class="row ">
+        <div class="col-sm-4"></div>
+        <div class="from-group form col-sm-12">
+        <p style="color: rgb(250, 250, 5)">{{ 'registration.check_email'|trans({'%email%': user.email}) }} </p>
+         <button type="button" class="btn-dark btn btn-md col-sm-12" style="background-color: #cc4e00"  onClick="location.href='/'">{{ 'Connection' }}</button>
+        </div>
+    </div>
+</div>
+
 {% endblock fos_user_content %}

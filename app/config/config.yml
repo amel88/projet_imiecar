@@ -106,7 +106,8 @@ fos_user:
 #            - { path: '^/admin', stop: true }  # <-- add this line
 
 easy_admin:
-    site_name: 'ACME <em style="font-size: 80%;">EmieCar.</em>'
+    site_name: 'EmieCar'
+
     design:
         brand_color: 'rgba(160, 0, 0, 0.85)'
 #        color_scheme: 'light'
