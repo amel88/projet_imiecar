@@ -1,41 +1,47 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% form_theme form ":FormTemplate:bootstrap_3_layout.html.twig" %}
+<link rel="stylesheet" href="{{ asset('connect/css/style.css') }}">
 <style>
-    form {
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        padding: 10px;
-        padding-top: 15px;
-    }
+    /*form {*/
+        /*background-color: rgba(0, 0, 0, 0.7);*/
+        /*border-radius: 10px;*/
+        /*padding: 15px 10px 10px 10px;*/
+    /*}*/
 </style>
-<div id="top">
-    <h1> ImieCar </h1>
-    <h2>Nouvelle utilisateur</h2>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                {{ form_start(form, {'method': 'POST', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register','style':'padding-bottom 0px'}}) }}
-                    {{ form_widget(form.lastname,{ 'attr': { 'placeholder': 'Nom'} }) }}
-                    {{ form_widget(form.firstname,{ 'attr': { 'placeholder': 'Prénom'} }) }}
-                    {{ form_widget(form.username,{ 'attr': { 'placeholder': 'Nom d\'utilisateur'} }) }}
-                    {{ form_widget(form.idCampus,{ 'attr': { 'placeholder': 'Campus'} }) }}
-                    <hr>
-                    {{ form_widget(form.email,{ 'attr': { 'placeholder': 'email'} }) }}
-                    <hr>
-                    {{ form_widget(form.plainPassword.first,{ 'attr': { 'placeholder': 'Mot de passe'} }) }}
-                    {{ form_widget(form.plainPassword.second, { 'attr': { 'placeholder': 'Vérification'} }) }}
-                    <div style="margin-top: 30px">
 
-                        {#<hr style="padding-bottom:px">#}
-                        <button type="button" class="btn-warning btn btn-md col-sm-6"  onClick="location.href='/'"><STRONG>Annulez</STRONG></button>
-                        <button type="submit" class="btn-success btn btn-md col-sm-6"><STRONG>Validez</STRONG></button> <br> <br>
-                    </div>
-                {{ form_end(form) }}
+<div class="container " style="color: #ffb900">
+    <div class="title" style="padding-bottom: 35px">Nouvelle utilisateur</div>
+    <script src="{{ asset('connect/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('connect/js/index.js') }}"></script>
+
+    <div class="row ">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            {{ form_start(form, {'method': 'POST', 'action': path('fos_user_registration_register'),
+                'attr': {'class':'fos_user_registration_register', 'style':'padding-bottom 0px'}}) }}
+            {{ form_widget(form.lastname, { 'attr': { 'placeholder': 'Nom','class':'col-sm-12','style':'margin-top: 5px ;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)' } }) }}
+            {{ form_widget(form.firstname,{ 'attr': { 'placeholder': 'Prénom','class':'col-sm-12','style':'margin-top: 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+            {{ form_widget(form.username, { 'attr': { 'placeholder': 'Nom d\'utilisateur','class':'col-sm-12','style':'margin-top: 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+            {{ form_widget(form.idCampus, { 'attr': { 'placeholder': 'Campus','class':'col-sm-12','style':'margin-top: 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+            <hr>
+            {{ form_widget(form.email,{ 'attr': { 'placeholder': 'email','class':'col-sm-12','style':'margin-top: 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+            <hr>
+            {{ form_widget(form.plainPassword.first,{ 'attr': { 'placeholder': 'Mot de passe','class':'col-sm-12','style':'margin-top: 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+            {{ form_widget(form.plainPassword.second, { 'attr': { 'placeholder': 'Vérification','class':'col-sm-12','style':'margin: 5px 0 5px;background-color: rgb(24, 14, 5);color: rgb(250, 250, 5)'} }) }}
+
+
+            <div style="margin-top: 30px">
+
+                <div style="margin: 5px">
+                    <button type="button" class="btn-warning btn btn-md col-sm-6" style="background-color: #cc4e00" onClick="location.href='/'">
+                        <STRONG>Annulez</STRONG></button>
+                </div>
+                <div style="margin: 5px">
+                    <button type="submit" class="btn-success btn btn-md col-sm-6" style="background-color: #cc4e00"><STRONG>Validez</STRONG></button>
+                </div>
             </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>
-
 
