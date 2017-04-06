@@ -116,7 +116,26 @@ class Commentaires
         $this->idUsers = $idUsers;
     }
 
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", fetch="EAGER")
+     */
+    private $idUsers2;
 
+    /**
+     * @return mixed
+     */
+    public function getIdUsers2()
+    {
+        return $this->idUsers2;
+    }
+
+    /**
+     * @param mixed $idUsers2
+     */
+    public function setIdUsers2($idUsers2)
+    {
+        $this->idUsers2 = $idUsers2;
+    }
 
 
 }

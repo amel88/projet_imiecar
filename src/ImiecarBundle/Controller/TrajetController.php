@@ -97,6 +97,27 @@ class TrajetController extends Controller
             $trajet->setNbPlaces($trajet->getNbPlaces()-1);
             $em->flush();
 
+        //ajout
+        $message = \Swift_Message::newInstance()
+            ->setSubject('confirmation du trajet')
+            ->setFrom('christopher.jacquot@gmail.com')
+//                    $this->getUser()->getEmail())
+            ->setTo('christopher.jacquot@gmail.com')
+            ->setBody(
+                ' Bonjour '.
+                $this->getUser().', je vous confirme le choix de votre trajet du '.
+                $trajet->getDate()->format('d.m.y').'. Il a comme ville de départ : "'.
+                $trajet->getVilleDepart(). '" , heure de départ : ' .
+                $trajet->getHeureDepart()->format('h:m') .' arrive à sa destination qui est : "'.
+                $trajet->getVilleArrivee().'" vers '.
+                $trajet->getHeureArrivee()->format('h:m').' .'
+            );
+
+
+        $this->get('mailer')->send($message);
+
+        //fin ajout
+
         return $this->render('choix/validation.html.twig', array(
             'trajet' => $trajet,
             'delete_form' => $deleteForm->createView(),
