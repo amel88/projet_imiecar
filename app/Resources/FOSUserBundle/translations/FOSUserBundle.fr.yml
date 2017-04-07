@@ -23,6 +23,10 @@ profile:
         lastname: 'Prénom'
     edit:
         submit: 'Mettre à jour'
+        first_name: 'Nom'
+        Last_name: 'Prénom'
+        firstname: 'Nom'
+        lastname: 'Prénom'
     flash:
         updated: 'Le profil a été mis à jour.'
 change_password:
@@ -83,6 +87,8 @@ form:
     group_name: 'Nom du groupe'
     firstname: 'Nom'
     lastname: 'Prénom'
+    First_name: 'Nom'
+    Last_name: 'Prénom'
     username: 'Nom d''utilisateur'
     email: 'Adresse e-mail'
     current_password: 'Mot de passe actuel'
