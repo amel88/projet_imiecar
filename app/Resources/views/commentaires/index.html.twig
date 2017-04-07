@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base2.html.twig' %}
 
 {% block body %}
 
@@ -16,7 +16,7 @@
                         <div class="trou"></div>
 
                         {% for commentaire in commentaires %}
-
+                        {% if  app.user.username == commentaire.idUsers2 or app.user.username == commentaire.idUsers %}
                             <div class="row fondtrajet2 col-sm-12">
                                 <div style="text-align: left" class="col-sm-6">
                                     <p>Posté le <strong><span>
@@ -37,7 +37,7 @@
                                     <br>
                                 </div>
                             </div>
-
+                        {% endif %}
                         {% endfor %}
                         <div class="row col-sm-12">
                             <div class="col-sm-12">
